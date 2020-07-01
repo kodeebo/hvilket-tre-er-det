@@ -1,7 +1,7 @@
 {
   "name": "hvilket-tre-er-det",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "author": "Torgeir Haugen",
   "license": "MIT",
   "scripts": {
