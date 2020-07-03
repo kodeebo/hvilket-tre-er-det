@@ -986,8 +986,8 @@ function hmrAcceptRun(bundle, id) {
 
   acceptedAssets[id] = true;
 }
-},{}],"2ccf54aac2e6e906f57e002fcd66b360":[function(require,module,exports) {
-require('./bundle-manifest').register(JSON.parse("{\"b307f53b5bcd82a0\":\"hvilketTreErDet.9e4de8a2.js\",\"1173e1c2e06bc51b\":\"leaf.855662ff.jpg\",\"048f230908c4ad71\":\"multiple.60f1f601.jpg\",\"92c122faf33988ae\":\"needle.966a9719.jpg\",\"69e159380c0d893e\":\"smooth.26083451.jpg\",\"76a6e1954acc03c2\":\"pointy.d35f7323.jpg\"}"));
+},{}],"628275a111a4df03716159a154e0314f":[function(require,module,exports) {
+require('./bundle-manifest').register(JSON.parse("{\"b307f53b5bcd82a0\":\"hvilketTreErDet.9e4de8a2.js\",\"1173e1c2e06bc51b\":\"leaf.855662ff.jpg\",\"048f230908c4ad71\":\"multiple.60f1f601.jpg\",\"92c122faf33988ae\":\"needle.966a9719.jpg\",\"69e159380c0d893e\":\"smooth.26083451.jpg\",\"76a6e1954acc03c2\":\"pointy.d35f7323.jpg\",\"9c4fb50672b0cc63\":\"sawtooth.b688b76c.jpg\"}"));
 },{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}],"ba8df6b71e73837c465d69bebde6e64d":[function(require,module,exports) {
 "use strict";
 
@@ -36491,9 +36491,11 @@ try {
   const Header = _c = _styledComponents.default.div`
   display: flex;
   justify-content: center;
-  font-size: 32px;
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: bold;
+  color: black;
   padding: 30px;
-  margin: -10px -6px;
 `;
 
   const Main = () => {
@@ -36541,7 +36543,7 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64,
+          lineNumber: 66,
           columnNumber: 12
         }
       }, "Invalid url");
@@ -36551,7 +36553,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 71,
         columnNumber: 7
       }
     }, currentLevel.header), currentLevel.bottom ? /*#__PURE__*/_react.default.createElement(_ImageArray.ImageArray, {
@@ -36561,7 +36563,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71,
+        lineNumber: 73,
         columnNumber: 9
       }
     }) : /*#__PURE__*/_react.default.createElement(_Categories.default, {
@@ -36570,7 +36572,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77,
+        lineNumber: 79,
         columnNumber: 9
       }
     }));
@@ -36660,7 +36662,7 @@ try {
       id: id,
       displayName: name,
       selected: selectedImage === name,
-      src: getRandomImage(images).standard_size_url,
+      src: getRandomImage(images).standard_size_url || getRandomImage(images).full_size_url,
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
@@ -36724,7 +36726,7 @@ try {
 `;
   const ImageHeader = _c2 = _styledComponents.default.div`
   font-size: 24px;
-  margin: 55px 0 35px 0;
+  margin: 20px 0;
   text-align: center;
 `;
   const StyledImage = _c3 = _styledComponents.default.img`
@@ -36902,6 +36904,8 @@ try {
 
   var _needle = _interopRequireDefault(require("../assets/needle.jpg"));
 
+  var _sawtooth = _interopRequireDefault(require("../assets/sawtooth.jpg"));
+
   var _smooth = _interopRequireDefault(require("../assets/smooth.jpg"));
 
   var _pointy = _interopRequireDefault(require("../assets/pointy.jpg"));
@@ -36915,7 +36919,7 @@ try {
     multiple: _multiple.default,
     simple: _smooth.default,
     needle: _needle.default,
-    sawtooth: _leaf.default,
+    sawtooth: _sawtooth.default,
     smooth: _smooth.default,
     pointy: _pointy.default
   };
@@ -36977,7 +36981,7 @@ try {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","./Image":"ad5e0abe63e518b91918bbc0e7d069e4","styled-components":"00f29180361410c43755b2aab57c93df","../assets/leaf.jpg":"5ec33796850d766134b1a28ffb81db00","../assets/multiple.jpg":"dc89491ca6c8d96566cd950812345c6e","../assets/needle.jpg":"16b25b8f5c29db2131e68fd3c721ad2a","../assets/smooth.jpg":"664efdc16fac650b2a1274aad82c87e0","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","../assets/pointy.jpg":"c84eb2e4bca4f6c01e3536f51212fea5"}],"5ec33796850d766134b1a28ffb81db00":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","./Image":"ad5e0abe63e518b91918bbc0e7d069e4","styled-components":"00f29180361410c43755b2aab57c93df","../assets/leaf.jpg":"5ec33796850d766134b1a28ffb81db00","../assets/multiple.jpg":"dc89491ca6c8d96566cd950812345c6e","../assets/needle.jpg":"16b25b8f5c29db2131e68fd3c721ad2a","../assets/smooth.jpg":"664efdc16fac650b2a1274aad82c87e0","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","../assets/pointy.jpg":"c84eb2e4bca4f6c01e3536f51212fea5","../assets/sawtooth.jpg":"37d32c6c0136c5b0522296ed3808517a"}],"5ec33796850d766134b1a28ffb81db00":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "1173e1c2e06bc51b");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"2146da1905b95151ed14d455c784e7b7":[function(require,module,exports) {
 "use strict";
@@ -37098,8 +37102,10 @@ module.exports = require('./bundle-url').getBundleURL() + require('./relative-pa
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "69e159380c0d893e");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"c84eb2e4bca4f6c01e3536f51212fea5":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "76a6e1954acc03c2");
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"37d32c6c0136c5b0522296ed3808517a":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "9c4fb50672b0cc63");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"0112e151aa697b283dff425370c7cf0f":[function(require,module,exports) {
-module.exports = JSON.parse("[{\"name\":\"Alm\",\"id\":\"alm\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Ask\",\"id\":\"ask_-_planteslekt\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Barlind\",\"id\":\"barlind\",\"categories\":[\"needle\"]},{\"name\":\"Lind\",\"id\":\"lind\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Spisslønn\",\"id\":\"lønn\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Bøk\",\"id\":\"bøk\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Eik\",\"id\":\"eik\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]}]");
-},{}]},{},["64c1770b35b04eb343009bb27a752262","2375f765180358b080bc735ae31d0590","2ccf54aac2e6e906f57e002fcd66b360","c181f344c621c74b950663989dcd2358"], null)
+module.exports = JSON.parse("[{\"name\":\"Alm\",\"id\":\"alm\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Ask\",\"id\":\"ask_-_planteslekt\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Barlind\",\"id\":\"barlind\",\"categories\":[\"needle\"]},{\"name\":\"Furu\",\"id\":\"furu\",\"categories\":[\"needle\"]},{\"name\":\"Gran\",\"id\":\"gran\",\"categories\":[\"needle\"]},{\"name\":\"Einer\",\"id\":\"einer\",\"categories\":[\"needle\"]},{\"name\":\"Lerk\",\"id\":\"lerk\",\"categories\":[\"needle\"]},{\"name\":\"Lind\",\"id\":\"lind\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Bjørk\",\"id\":\"bjørk\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Hassel\",\"id\":\"hassel\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Osp\",\"id\":\"osp\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Or\",\"id\":\"or\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Spisslønn\",\"id\":\"lønn_-_treslekt\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Platanlønn\",\"id\":\"platanlønn\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Bøk\",\"id\":\"bøk\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Selje\",\"id\":\"selje\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Eik\",\"id\":\"eik\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]}]");
+},{}]},{},["64c1770b35b04eb343009bb27a752262","2375f765180358b080bc735ae31d0590","628275a111a4df03716159a154e0314f","c181f344c621c74b950663989dcd2358"], null)
 
 //# sourceMappingURL=hvilketTreErDet.9e4de8a2.js.map

@@ -17,7 +17,7 @@ const ImageWrapper = styled.div`
 
 const ImageHeader = styled.div`
   font-size: 24px;
-  margin: 55px 0 35px 0;
+  margin: 20px 0;
   text-align: center;
 `;
 

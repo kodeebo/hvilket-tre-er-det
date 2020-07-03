@@ -7,7 +7,7 @@ import trees from "./trees.json";
 import leaf from "../assets/leaf.jpg";
 import multiple from "../assets/multiple.jpg";
 import needle from "../assets/needle.jpg";
-import sawtooth from "../assets/leaf.jpg";
+import sawtooth from "../assets/sawtooth.jpg";
 import smooth from "../assets/smooth.jpg";
 import simple from "../assets/smooth.jpg";
 import pointy from "../assets/pointy.jpg";

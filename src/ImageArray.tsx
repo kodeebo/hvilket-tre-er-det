@@ -33,7 +33,7 @@ export const ImageArray = ({ currentLevel, forest, selectedImage }: Props) => {
           id={id}
           displayName={name}
           selected={selectedImage === name}
-          src={getRandomImage(images).standard_size_url}
+          src={getRandomImage(images).standard_size_url || getRandomImage(images).full_size_url}
         />
       ))}
     </StyledWrapper>

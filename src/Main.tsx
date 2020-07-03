@@ -10,9 +10,11 @@ import allTrees from "./trees.json";
 const Header = styled.div`
   display: flex;
   justify-content: center;
-  font-size: 32px;
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: bold;
+  color: black;
   padding: 30px;
-  margin: -10px -6px;
 `;
 
 export interface Structure {
