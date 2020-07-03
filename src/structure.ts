@@ -1,6 +1,7 @@
 export default {
   ["/"]: {
     header: "Norske trær",
+    id: "/",
     bottom: false,
     categories: [
       { name: "Barnål", id: "needle", bottom: true },

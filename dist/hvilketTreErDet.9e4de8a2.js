@@ -986,8 +986,8 @@ function hmrAcceptRun(bundle, id) {
 
   acceptedAssets[id] = true;
 }
-},{}],"628275a111a4df03716159a154e0314f":[function(require,module,exports) {
-require('./bundle-manifest').register(JSON.parse("{\"b307f53b5bcd82a0\":\"hvilketTreErDet.9e4de8a2.js\",\"1173e1c2e06bc51b\":\"leaf.855662ff.jpg\",\"048f230908c4ad71\":\"multiple.60f1f601.jpg\",\"92c122faf33988ae\":\"needle.966a9719.jpg\",\"69e159380c0d893e\":\"smooth.26083451.jpg\",\"76a6e1954acc03c2\":\"pointy.d35f7323.jpg\",\"9c4fb50672b0cc63\":\"sawtooth.b688b76c.jpg\"}"));
+},{}],"df666a075bb9d13afb1bc5a2f8743d35":[function(require,module,exports) {
+require('./bundle-manifest').register(JSON.parse("{\"b307f53b5bcd82a0\":\"hvilketTreErDet.9e4de8a2.js\",\"1173e1c2e06bc51b\":\"leaf.855662ff.jpg\",\"048f230908c4ad71\":\"multiple.60f1f601.jpg\",\"92c122faf33988ae\":\"needle.966a9719.jpg\",\"9c4fb50672b0cc63\":\"sawtooth.b688b76c.jpg\",\"69e159380c0d893e\":\"smooth.26083451.jpg\",\"76a6e1954acc03c2\":\"pointy.d35f7323.jpg\"}"));
 },{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}],"ba8df6b71e73837c465d69bebde6e64d":[function(require,module,exports) {
 "use strict";
 
@@ -29275,7 +29275,7 @@ try {
   body {
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(2,103,9,1) 70%, rgba(0,204,255,1) 100%);
-    height: 100vh;
+    height: 100%;
     color: white;
     font-family: Montserrat;
   }
@@ -36471,13 +36471,13 @@ try {
 
   var _reactRouterDom = require("react-router-dom");
 
-  var _ImageArray = require("./ImageArray");
-
-  var _Categories = _interopRequireDefault(require("./Categories"));
-
   var _structure = _interopRequireDefault(require("./structure"));
 
   var _trees = _interopRequireDefault(require("./trees.json"));
+
+  var _Header = _interopRequireDefault(require("./Header"));
+
+  var _Content = _interopRequireDefault(require("./Content"));
 
   var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/Main.tsx",
       _s = $RefreshSig$();
@@ -36488,14 +36488,8 @@ try {
 
   function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-  const Header = _c = _styledComponents.default.div`
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
-  font-family: Roboto;
-  font-weight: bold;
-  color: black;
-  padding: 30px;
+  const Wrapper = _c = _styledComponents.default.div`
+  min-height: 100vh;
 `;
 
   const Main = () => {
@@ -36537,43 +36531,29 @@ try {
         fetchTrees();
       }
     }, [currentLevel]);
-
-    if (!currentLevel.header) {
-      return /*#__PURE__*/_react.default.createElement("span", {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 66,
-          columnNumber: 12
-        }
-      }, "Invalid url");
-    }
-
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(Header, {
+    return /*#__PURE__*/_react.default.createElement(Wrapper, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71,
+        lineNumber: 59,
+        columnNumber: 5
+      }
+    }, /*#__PURE__*/_react.default.createElement(_Header.default, {
+      currentLevel: currentLevel,
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
         columnNumber: 7
       }
-    }, currentLevel.header), currentLevel.bottom ? /*#__PURE__*/_react.default.createElement(_ImageArray.ImageArray, {
+    }), /*#__PURE__*/_react.default.createElement(_Content.default, {
       currentLevel: currentLevel,
       forest: forest,
-      selectedImage: location.pathname !== "/" && location.pathname,
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73,
-        columnNumber: 9
-      }
-    }) : /*#__PURE__*/_react.default.createElement(_Categories.default, {
-      currentLevel: currentLevel,
-      selectedImage: location.pathname !== "/" && location.pathname,
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 79,
-        columnNumber: 9
+        lineNumber: 61,
+        columnNumber: 7
       }
     }));
   };
@@ -36590,14 +36570,289 @@ try {
 
   var _c, _c2;
 
-  $RefreshReg$(_c, "Header");
+  $RefreshReg$(_c, "Wrapper");
   $RefreshReg$(_c2, "Main");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","./ImageArray":"562b6393d7ef1df27866cc91eb45125a","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","./structure":"99329e77cba7ac7d082b0cc45e61aa2a","./Categories":"9a152c3b95760a99b6efb2b5e75f823d","./trees.json":"0112e151aa697b283dff425370c7cf0f"}],"562b6393d7ef1df27866cc91eb45125a":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","./structure":"99329e77cba7ac7d082b0cc45e61aa2a","./trees.json":"0112e151aa697b283dff425370c7cf0f","./Header":"69968aec69aede2146c7bd19b5db250a","./Content":"1dcc0dd434ee7bc1ed717539de9c09a6"}],"99329e77cba7ac7d082b0cc45e61aa2a":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  ["/"]: {
+    header: "Norske trær",
+    id: "/",
+    bottom: false,
+    categories: [{
+      name: "Barnål",
+      id: "needle",
+      bottom: true
+    }, {
+      name: "Løvblad",
+      id: "leaf",
+      bottom: false
+    }]
+  },
+  ["/needle"]: {
+    header: "Barnål",
+    bottom: true,
+    id: "needle"
+  },
+  ["/leaf"]: {
+    header: "Løvblad",
+    id: "leaf",
+    bottom: false,
+    categories: [{
+      name: "Enkle",
+      id: "simple",
+      bottom: false
+    }, {
+      name: "Samensatt",
+      id: "multiple",
+      bottom: true
+    }]
+  },
+  ["/leaf/simple"]: {
+    header: "Enkle blad",
+    bottom: false,
+    id: "simple",
+    categories: [{
+      name: "Sagtannet bladkant",
+      id: "sawtooth",
+      bottom: true
+    }, {
+      name: "Fliket bladkant",
+      id: "pointy",
+      bottom: true
+    }, {
+      name: "Jevn bladkant",
+      id: "smooth",
+      bottom: true
+    }]
+  },
+  ["/leaf/multiple"]: {
+    header: "Sammensatte blad",
+    bottom: true,
+    id: "multiple"
+  },
+  ["/leaf/simple/sawtooth"]: {
+    header: "Sagtagget bladkant",
+    id: "sawtooth",
+    bottom: true
+  },
+  ["/leaf/simple/pointy"]: {
+    header: "Fliket bladkant",
+    id: "pointy",
+    bottom: true
+  },
+  ["/leaf/simple/smooth"]: {
+    header: "Jevn bladkant",
+    id: "smooth",
+    bottom: true
+  }
+};
+exports.default = _default;
+},{}],"0112e151aa697b283dff425370c7cf0f":[function(require,module,exports) {
+module.exports = JSON.parse("[{\"name\":\"Alm\",\"id\":\"alm\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Ask\",\"id\":\"ask_-_planteslekt\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Barlind\",\"id\":\"barlind\",\"categories\":[\"needle\"]},{\"name\":\"Furu\",\"id\":\"furu\",\"categories\":[\"needle\"]},{\"name\":\"Gran\",\"id\":\"gran\",\"categories\":[\"needle\"]},{\"name\":\"Einer\",\"id\":\"einer\",\"categories\":[\"needle\"]},{\"name\":\"Lerk\",\"id\":\"lerk\",\"categories\":[\"needle\"]},{\"name\":\"Lind\",\"id\":\"lind\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Bjørk\",\"id\":\"bjørk\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Hassel\",\"id\":\"hassel\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Osp\",\"id\":\"osp\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Or\",\"id\":\"or\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Spisslønn\",\"id\":\"lønn_-_treslekt\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Platanlønn\",\"id\":\"platanlønn\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Bøk\",\"id\":\"bøk\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Selje\",\"id\":\"selje\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Eik\",\"id\":\"eik\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]}]");
+},{}],"69968aec69aede2146c7bd19b5db250a":[function(require,module,exports) {
+"use strict";
+
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(require("react"));
+
+  var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+  var _reactRouterDom = require("react-router-dom");
+
+  var _structure = _interopRequireDefault(require("./structure"));
+
+  var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/Header.tsx",
+      _s = $RefreshSig$();
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  const Wrapper = _c = _styledComponents.default.div`
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: bold;
+  color: black;
+  padding: 30px;
+`;
+
+  const Header = ({
+    currentLevel = {}
+  }) => {
+    _s();
+
+    const location = (0, _reactRouterDom.useLocation)();
+    const paths = location.pathname.split("/");
+    console.log(paths);
+    const headers = paths.map(path => _structure.default[`/${path}`]?.header); // TODO: how to show double nested headers when id always are simple?
+
+    return /*#__PURE__*/_react.default.createElement(Wrapper, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22,
+        columnNumber: 10
+      }
+    }, currentLevel.header);
+  };
+
+  _s(Header, "pkHmaVRPskBaU4tMJuJJpV42k1I=", false, function () {
+    return [_reactRouterDom.useLocation];
+  });
+
+  _c2 = Header;
+  var _default = Header;
+  exports.default = _default;
+
+  var _c, _c2;
+
+  $RefreshReg$(_c, "Wrapper");
+  $RefreshReg$(_c2, "Header");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","./structure":"99329e77cba7ac7d082b0cc45e61aa2a"}],"1dcc0dd434ee7bc1ed717539de9c09a6":[function(require,module,exports) {
+"use strict";
+
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(require("react"));
+
+  var _reactRouterDom = require("react-router-dom/cjs/react-router-dom.min");
+
+  var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+  var _ImageArray = require("./ImageArray");
+
+  var _Categories = _interopRequireDefault(require("./Categories"));
+
+  var _InfoPage = _interopRequireDefault(require("./InfoPage"));
+
+  var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/Content.tsx",
+      _s = $RefreshSig$();
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  const Wrapper = _c = _styledComponents.default.div`
+    margin: 5px;
+`;
+
+  const Content = ({
+    currentLevel,
+    forest
+  }) => {
+    _s();
+
+    const location = (0, _reactRouterDom.useLocation)();
+
+    if (!currentLevel.id) {
+      const treeId = location.pathname.split("/").pop();
+      console.log(treeId);
+      const foundTree = Object.keys(forest).find(tree => forest[tree].id === treeId);
+      console.log(foundTree);
+      return /*#__PURE__*/_react.default.createElement(Wrapper, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_react.default.createElement(_InfoPage.default, {
+        tree: forest[foundTree],
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23,
+          columnNumber: 9
+        }
+      }));
+    }
+
+    return /*#__PURE__*/_react.default.createElement(Wrapper, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29,
+        columnNumber: 5
+      }
+    }, currentLevel.bottom ? /*#__PURE__*/_react.default.createElement(_ImageArray.ImageArray, {
+      currentLevel: currentLevel,
+      forest: forest,
+      selectedImage: location.pathname !== "/" && location.pathname,
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 9
+      }
+    }) : /*#__PURE__*/_react.default.createElement(_Categories.default, {
+      currentLevel: currentLevel,
+      selectedImage: location.pathname !== "/" && location.pathname,
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 9
+      }
+    }));
+  };
+
+  _s(Content, "pkHmaVRPskBaU4tMJuJJpV42k1I=", false, function () {
+    return [_reactRouterDom.useLocation];
+  });
+
+  _c2 = Content;
+  var _default = Content;
+  exports.default = _default;
+
+  var _c, _c2;
+
+  $RefreshReg$(_c, "Wrapper");
+  $RefreshReg$(_c2, "Content");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","react-router-dom/cjs/react-router-dom.min":"b4c82913c92478bad5096c098843c364","./ImageArray":"562b6393d7ef1df27866cc91eb45125a","./Categories":"9a152c3b95760a99b6efb2b5e75f823d","styled-components":"00f29180361410c43755b2aab57c93df","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","./InfoPage":"f95419173dd464dbc8e8f4327345b6b4"}],"b4c82913c92478bad5096c098843c364":[function(require,module,exports) {
+"use strict";function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}Object.defineProperty(exports,"__esModule",{value:!0});var reactRouter=require("react-router"),React=_interopDefault(require("react")),history=require("history");require("prop-types"),require("tiny-warning");var invariant=_interopDefault(require("tiny-invariant"));function _extends(){return(_extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e}).apply(this,arguments)}function _inheritsLoose(e,t){e.prototype=Object.create(t.prototype),(e.prototype.constructor=e).__proto__=t}function _objectWithoutPropertiesLoose(e,t){if(null==e)return{};var r,o,n={},a=Object.keys(e);for(o=0;o<a.length;o++)r=a[o],0<=t.indexOf(r)||(n[r]=e[r]);return n}var BrowserRouter=function(n){function e(){for(var e,t=arguments.length,r=new Array(t),o=0;o<t;o++)r[o]=arguments[o];return(e=n.call.apply(n,[this].concat(r))||this).history=history.createBrowserHistory(e.props),e}return _inheritsLoose(e,n),e.prototype.render=function(){return React.createElement(reactRouter.Router,{history:this.history,children:this.props.children})},e}(React.Component),HashRouter=function(n){function e(){for(var e,t=arguments.length,r=new Array(t),o=0;o<t;o++)r[o]=arguments[o];return(e=n.call.apply(n,[this].concat(r))||this).history=history.createHashHistory(e.props),e}return _inheritsLoose(e,n),e.prototype.render=function(){return React.createElement(reactRouter.Router,{history:this.history,children:this.props.children})},e}(React.Component),resolveToLocation=function(e,t){return"function"==typeof e?e(t):e},normalizeToLocation=function(e,t){return"string"==typeof e?history.createLocation(e,null,null,t):e},forwardRefShim=function(e){return e},forwardRef=React.forwardRef;function isModifiedEvent(e){return!!(e.metaKey||e.altKey||e.ctrlKey||e.shiftKey)}void 0===forwardRef&&(forwardRef=forwardRefShim);var LinkAnchor=forwardRef(function(e,t){var r=e.innerRef,o=e.navigate,n=e.onClick,a=_objectWithoutPropertiesLoose(e,["innerRef","navigate","onClick"]),i=a.target,c=_extends({},a,{onClick:function(t){try{n&&n(t)}catch(e){throw t.preventDefault(),e}t.defaultPrevented||0!==t.button||i&&"_self"!==i||isModifiedEvent(t)||(t.preventDefault(),o())}});return c.ref=forwardRefShim!==forwardRef&&t||r,React.createElement("a",c)}),Link=forwardRef(function(e,a){var t=e.component,i=void 0===t?LinkAnchor:t,c=e.replace,u=e.to,s=e.innerRef,f=_objectWithoutPropertiesLoose(e,["component","replace","to","innerRef"]);return React.createElement(reactRouter.__RouterContext.Consumer,null,function(t){t||invariant(!1);var r=t.history,e=normalizeToLocation(resolveToLocation(u,t.location),t.location),o=e?r.createHref(e):"",n=_extends({},f,{href:o,navigate:function(){var e=resolveToLocation(u,t.location);(c?r.replace:r.push)(e)}});return forwardRefShim!==forwardRef?n.ref=a||s:n.innerRef=s,React.createElement(i,n)})}),forwardRefShim$1=function(e){return e},forwardRef$1=React.forwardRef;function joinClassnames(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return t.filter(function(e){return e}).join(" ")}void 0===forwardRef$1&&(forwardRef$1=forwardRefShim$1);var NavLink=forwardRef$1(function(e,f){var t=e["aria-current"],l=void 0===t?"page":t,r=e.activeClassName,p=void 0===r?"active":r,R=e.activeStyle,h=e.className,d=e.exact,y=e.isActive,m=e.location,v=e.sensitive,b=e.strict,w=e.style,x=e.to,g=e.innerRef,P=_objectWithoutPropertiesLoose(e,["aria-current","activeClassName","activeStyle","className","exact","isActive","location","sensitive","strict","style","to","innerRef"]);return React.createElement(reactRouter.__RouterContext.Consumer,null,function(e){e||invariant(!1);var t=m||e.location,r=normalizeToLocation(resolveToLocation(x,t),t),o=r.pathname,n=o&&o.replace(/([.+*?=^!:${}()[\]|/\\])/g,"\\$1"),a=n?reactRouter.matchPath(t.pathname,{path:n,exact:d,sensitive:v,strict:b}):null,i=!!(y?y(a,t):a),c=i?joinClassnames(h,p):h,u=i?_extends({},w,{},R):w,s=_extends({"aria-current":i&&l||null,className:c,style:u,to:r},P);return forwardRefShim$1!==forwardRef$1?s.ref=f||g:s.innerRef=g,React.createElement(Link,s)})});Object.defineProperty(exports,"MemoryRouter",{enumerable:!0,get:function(){return reactRouter.MemoryRouter}}),Object.defineProperty(exports,"Prompt",{enumerable:!0,get:function(){return reactRouter.Prompt}}),Object.defineProperty(exports,"Redirect",{enumerable:!0,get:function(){return reactRouter.Redirect}}),Object.defineProperty(exports,"Route",{enumerable:!0,get:function(){return reactRouter.Route}}),Object.defineProperty(exports,"Router",{enumerable:!0,get:function(){return reactRouter.Router}}),Object.defineProperty(exports,"StaticRouter",{enumerable:!0,get:function(){return reactRouter.StaticRouter}}),Object.defineProperty(exports,"Switch",{enumerable:!0,get:function(){return reactRouter.Switch}}),Object.defineProperty(exports,"generatePath",{enumerable:!0,get:function(){return reactRouter.generatePath}}),Object.defineProperty(exports,"matchPath",{enumerable:!0,get:function(){return reactRouter.matchPath}}),Object.defineProperty(exports,"useHistory",{enumerable:!0,get:function(){return reactRouter.useHistory}}),Object.defineProperty(exports,"useLocation",{enumerable:!0,get:function(){return reactRouter.useLocation}}),Object.defineProperty(exports,"useParams",{enumerable:!0,get:function(){return reactRouter.useParams}}),Object.defineProperty(exports,"useRouteMatch",{enumerable:!0,get:function(){return reactRouter.useRouteMatch}}),Object.defineProperty(exports,"withRouter",{enumerable:!0,get:function(){return reactRouter.withRouter}}),exports.BrowserRouter=BrowserRouter,exports.HashRouter=HashRouter,exports.Link=Link,exports.NavLink=NavLink;
+//# sourceMappingURL=react-router-dom.min.js.map
+
+},{"react-router":"b7a5231c459d532338bc3663d86598c5","react":"c3469d175e6ab91a6ebac2096f1b2459","history":"c81eeaf7dd2eb416f49b110dc96c3f09","prop-types":"ca80ac4b9592f8ec9bb1c059d660d676","tiny-warning":"2e9decedc8cbd1ab8cc580c69c08205a","tiny-invariant":"50fd5116415eed5159fdd0527aa1b0d5"}],"562b6393d7ef1df27866cc91eb45125a":[function(require,module,exports) {
 "use strict";
 
 var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -36797,87 +37052,7 @@ try {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"99329e77cba7ac7d082b0cc45e61aa2a":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  ["/"]: {
-    header: "Norske trær",
-    bottom: false,
-    categories: [{
-      name: "Barnål",
-      id: "needle",
-      bottom: true
-    }, {
-      name: "Løvblad",
-      id: "leaf",
-      bottom: false
-    }]
-  },
-  ["/needle"]: {
-    header: "Barnål",
-    bottom: true,
-    id: "needle"
-  },
-  ["/leaf"]: {
-    header: "Løvblad",
-    id: "leaf",
-    bottom: false,
-    categories: [{
-      name: "Enkle",
-      id: "simple",
-      bottom: false
-    }, {
-      name: "Samensatt",
-      id: "multiple",
-      bottom: true
-    }]
-  },
-  ["/leaf/simple"]: {
-    header: "Enkle blad",
-    bottom: false,
-    id: "simple",
-    categories: [{
-      name: "Sagtannet bladkant",
-      id: "sawtooth",
-      bottom: true
-    }, {
-      name: "Fliket bladkant",
-      id: "pointy",
-      bottom: true
-    }, {
-      name: "Jevn bladkant",
-      id: "smooth",
-      bottom: true
-    }]
-  },
-  ["/leaf/multiple"]: {
-    header: "Sammensatte blad",
-    bottom: true,
-    id: "multiple"
-  },
-  ["/leaf/simple/sawtooth"]: {
-    header: "Sagtagget bladkant",
-    id: "sawtooth",
-    bottom: true
-  },
-  ["/leaf/simple/pointy"]: {
-    header: "Fliket bladkant",
-    id: "pointy",
-    bottom: true
-  },
-  ["/leaf/simple/smooth"]: {
-    header: "Jevn bladkant",
-    id: "smooth",
-    bottom: true
-  }
-};
-exports.default = _default;
-},{}],"9a152c3b95760a99b6efb2b5e75f823d":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"9a152c3b95760a99b6efb2b5e75f823d":[function(require,module,exports) {
 "use strict";
 
 var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -36981,7 +37156,7 @@ try {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","./Image":"ad5e0abe63e518b91918bbc0e7d069e4","styled-components":"00f29180361410c43755b2aab57c93df","../assets/leaf.jpg":"5ec33796850d766134b1a28ffb81db00","../assets/multiple.jpg":"dc89491ca6c8d96566cd950812345c6e","../assets/needle.jpg":"16b25b8f5c29db2131e68fd3c721ad2a","../assets/smooth.jpg":"664efdc16fac650b2a1274aad82c87e0","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","../assets/pointy.jpg":"c84eb2e4bca4f6c01e3536f51212fea5","../assets/sawtooth.jpg":"37d32c6c0136c5b0522296ed3808517a"}],"5ec33796850d766134b1a28ffb81db00":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","./Image":"ad5e0abe63e518b91918bbc0e7d069e4","styled-components":"00f29180361410c43755b2aab57c93df","../assets/leaf.jpg":"5ec33796850d766134b1a28ffb81db00","../assets/multiple.jpg":"dc89491ca6c8d96566cd950812345c6e","../assets/needle.jpg":"16b25b8f5c29db2131e68fd3c721ad2a","../assets/sawtooth.jpg":"37d32c6c0136c5b0522296ed3808517a","../assets/smooth.jpg":"664efdc16fac650b2a1274aad82c87e0","../assets/pointy.jpg":"c84eb2e4bca4f6c01e3536f51212fea5","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"5ec33796850d766134b1a28ffb81db00":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "1173e1c2e06bc51b");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"2146da1905b95151ed14d455c784e7b7":[function(require,module,exports) {
 "use strict";
@@ -37098,14 +37273,86 @@ module.exports._relative = relative;
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "048f230908c4ad71");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"16b25b8f5c29db2131e68fd3c721ad2a":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "92c122faf33988ae");
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"37d32c6c0136c5b0522296ed3808517a":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "9c4fb50672b0cc63");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"664efdc16fac650b2a1274aad82c87e0":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "69e159380c0d893e");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"c84eb2e4bca4f6c01e3536f51212fea5":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "76a6e1954acc03c2");
-},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"37d32c6c0136c5b0522296ed3808517a":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "9c4fb50672b0cc63");
-},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"0112e151aa697b283dff425370c7cf0f":[function(require,module,exports) {
-module.exports = JSON.parse("[{\"name\":\"Alm\",\"id\":\"alm\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Ask\",\"id\":\"ask_-_planteslekt\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Barlind\",\"id\":\"barlind\",\"categories\":[\"needle\"]},{\"name\":\"Furu\",\"id\":\"furu\",\"categories\":[\"needle\"]},{\"name\":\"Gran\",\"id\":\"gran\",\"categories\":[\"needle\"]},{\"name\":\"Einer\",\"id\":\"einer\",\"categories\":[\"needle\"]},{\"name\":\"Lerk\",\"id\":\"lerk\",\"categories\":[\"needle\"]},{\"name\":\"Lind\",\"id\":\"lind\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Bjørk\",\"id\":\"bjørk\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Hassel\",\"id\":\"hassel\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Osp\",\"id\":\"osp\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Or\",\"id\":\"or\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Spisslønn\",\"id\":\"lønn_-_treslekt\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Platanlønn\",\"id\":\"platanlønn\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Bøk\",\"id\":\"bøk\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Selje\",\"id\":\"selje\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Eik\",\"id\":\"eik\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]}]");
-},{}]},{},["64c1770b35b04eb343009bb27a752262","2375f765180358b080bc735ae31d0590","628275a111a4df03716159a154e0314f","c181f344c621c74b950663989dcd2358"], null)
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"f95419173dd464dbc8e8f4327345b6b4":[function(require,module,exports) {
+"use strict";
+
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(require("react"));
+
+  var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+  var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/InfoPage.tsx";
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  const Wrapper = _c = _styledComponents.default.div`
+    background: white;
+    opacity: 0.8;
+    color: black;
+`;
+
+  const InfoPage = ({
+    tree
+  }) => {
+    console.log(tree);
+    if (!tree) return /*#__PURE__*/_react.default.createElement("span", {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12,
+        columnNumber: 21
+      }
+    }, "No info found");
+    return /*#__PURE__*/_react.default.createElement(Wrapper, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14,
+        columnNumber: 5
+      }
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: tree.xhtml_body
+      },
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15,
+        columnNumber: 7
+      }
+    }));
+  };
+
+  _c2 = InfoPage;
+  var _default = InfoPage;
+  exports.default = _default;
+
+  var _c, _c2;
+
+  $RefreshReg$(_c, "Wrapper");
+  $RefreshReg$(_c2, "InfoPage");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","styled-components":"00f29180361410c43755b2aab57c93df"}]},{},["64c1770b35b04eb343009bb27a752262","2375f765180358b080bc735ae31d0590","df666a075bb9d13afb1bc5a2f8743d35","c181f344c621c74b950663989dcd2358"], null)
 
 //# sourceMappingURL=hvilketTreErDet.9e4de8a2.js.map

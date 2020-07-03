@@ -2,21 +2,14 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 
-import { ImageArray } from "./ImageArray";
-import Categories from "./Categories";
 import structure from "./structure";
 import allTrees from "./trees.json";
+import Header from "./Header";
+import Content from "./Content";
 
-const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
-  font-family: Roboto;
-  font-weight: bold;
-  color: black;
-  padding: 30px;
+const Wrapper = styled.div`
+  min-height: 100vh;
 `;
-
 export interface Structure {
   header: string;
   id: string;
@@ -62,23 +55,11 @@ export const Main = () => {
     }
   }, [currentLevel]);
 
-  if (!currentLevel.header) {
-    return <span>Invalid url</span>;
-  }
-
   return (
-    <>
-      <Header>{currentLevel.header}</Header>
-      {currentLevel.bottom ? (
-        <ImageArray
-          currentLevel={currentLevel}
-          forest={forest}
-          selectedImage={location.pathname !== "/" && location.pathname}
-        />
-      ) : (
-        <Categories currentLevel={currentLevel} selectedImage={location.pathname !== "/" && location.pathname} />
-      )}
-    </>
+    <Wrapper>
+      <Header currentLevel={currentLevel} />
+      <Content currentLevel={currentLevel} forest={forest} />
+    </Wrapper>
   );
 };
 
