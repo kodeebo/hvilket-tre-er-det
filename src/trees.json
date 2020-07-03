@@ -1,0 +1,9 @@
+[
+  { "name": "Alm", "id": "alm", "categories": ["leaf", "simple", "sawtooth"] },
+  { "name": "Ask", "id": "ask_-_planteslekt", "categories": ["leaf", "multiple"] },
+  { "name": "Barlind", "id": "barlind", "categories": ["needle"] },
+  { "name": "Lind", "id": "lind", "categories": ["leaf", "simple", "sawtooth"] },
+  { "name": "Spisslønn", "id": "lønn", "categories": ["leaf", "simple", "pointy"] },
+  { "name": "Bøk", "id": "bøk", "categories": ["leaf", "simple", "smooth"] },
+  { "name": "Eik", "id": "eik", "categories": ["leaf", "simple", "pointy"] }
+]

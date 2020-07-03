@@ -1,13 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-
-import alm from "../assets/Alm.jpg";
-import ask from "../assets/Ask.jpg";
-import barlind from "../assets/Barlind.jpg";
-import lind from "../assets/Lind.jpg";
-import spisslønn from "../assets/Spisslønn.jpg";
-
-const images = { alm, ask, barlind, lind, spisslønn };
+import { Link } from "react-router-dom";
 
 const scale = keyframes`
   0% {
@@ -18,33 +11,37 @@ const scale = keyframes`
   }
 `;
 
-const StyledButton = styled.div`
-  cursor: pointer;
+const ImageWrapper = styled.div`
   margin: 20px;
+`;
+
+const ImageHeader = styled.div`
+  font-size: 24px;
+  margin: 55px 0 35px 0;
+  text-align: center;
+`;
+
+const StyledImage = styled.img`
+  cursor: pointer;
+  width: 350px;
+  height: 260px;
+  box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.25);
   transition: 0.2s;
 
   &:hover {
     transform: scale(1.06, 1.06);
   }
+
+  ${(props) => (props.selected ? "transform: scale(1.06, 1.06);" : "opacity: 0.75;")}
 `;
 
-const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
-  max-width: 500px;
-  box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.25);
-`;
-
-export const Image = ({ image, onClick }) => {
+export const Image = ({ displayName, id, selected, src }) => {
   return (
-    <StyledButton
-      role="button"
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(image);
-      }}
-    >
-      <StyledImage src={images[image]} />
-    </StyledButton>
+    <ImageWrapper>
+      <ImageHeader>{displayName}</ImageHeader>
+      <Link to={(location) => `${location.pathname.length > 1 ? location.pathname : ""}/${id}`}>
+        <StyledImage selected={selected} src={src} />
+      </Link>
+    </ImageWrapper>
   );
 };
