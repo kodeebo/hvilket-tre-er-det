@@ -17,6 +17,8 @@ interface Props {
 
 const getRandomImage = (images) => images.length && images[Math.floor(images.length * Math.random())];
 
+const getImage = (images, preferred_image) => (preferred_image ? images[preferred_image] : getRandomImage(images));
+
 export const ImageArray = ({ currentLevel, forest, selectedImage }: Props) => {
   if (!forest) {
     return <div>"No trees found"</div>;
@@ -28,12 +30,12 @@ export const ImageArray = ({ currentLevel, forest, selectedImage }: Props) => {
 
   return (
     <StyledWrapper>
-      {trees.map(({ name, id, images }) => (
+      {trees.map(({ name, id, images, preferred_image }) => (
         <Image
           id={id}
           displayName={name}
           selected={selectedImage === name}
-          src={getRandomImage(images).standard_size_url || getRandomImage(images).full_size_url}
+          src={getImage(images, preferred_image).standard_size_url || getImage(images, preferred_image).full_size_url}
         />
       ))}
     </StyledWrapper>

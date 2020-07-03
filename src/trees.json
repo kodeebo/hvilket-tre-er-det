@@ -12,8 +12,8 @@
   { "name": "Osp", "id": "osp", "categories": ["leaf", "simple", "sawtooth"] },
   { "name": "Or", "id": "or", "categories": ["leaf", "simple", "sawtooth"] },
   { "name": "Spisslønn", "id": "lønn_-_treslekt", "categories": ["leaf", "simple", "pointy"] },
-  { "name": "Platanlønn", "id": "platanlønn", "categories": ["leaf", "simple", "pointy"] },
+  { "name": "Platanlønn", "id": "platanlønn", "preferred_image": 8, "categories": ["leaf", "simple", "pointy"] },
   { "name": "Bøk", "id": "bøk", "categories": ["leaf", "simple", "smooth"] },
   { "name": "Selje", "id": "selje", "categories": ["leaf", "simple", "smooth"] },
-  { "name": "Eik", "id": "eik", "categories": ["leaf", "simple", "pointy"] }
+  { "name": "Eik", "id": "eik", "preferred_image": 3, "categories": ["leaf", "simple", "pointy"] }
 ]

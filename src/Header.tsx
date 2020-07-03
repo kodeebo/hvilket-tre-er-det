@@ -13,13 +13,13 @@ const Wrapper = styled.div`
   padding: 30px;
 `;
 
-const Header = ({ currentLevel = {} }) => {
+const Header = ({ children }) => {
   const location = useLocation();
   const paths = location.pathname.split("/");
   console.log(paths);
   const headers = paths.map((path) => structure[`/${path}`]?.header);
   // TODO: how to show double nested headers when id always are simple?
-  return <Wrapper>{currentLevel.header}</Wrapper>;
+  return <Wrapper>{children}</Wrapper>;
 };
 
 export default Header;

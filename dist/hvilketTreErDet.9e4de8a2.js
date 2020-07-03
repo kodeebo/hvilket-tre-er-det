@@ -36539,14 +36539,13 @@ try {
         columnNumber: 5
       }
     }, /*#__PURE__*/_react.default.createElement(_Header.default, {
-      currentLevel: currentLevel,
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 60,
         columnNumber: 7
       }
-    }), /*#__PURE__*/_react.default.createElement(_Content.default, {
+    }, currentLevel.header), /*#__PURE__*/_react.default.createElement(_Content.default, {
       currentLevel: currentLevel,
       forest: forest,
       __self: void 0,
@@ -36659,7 +36658,7 @@ var _default = {
 };
 exports.default = _default;
 },{}],"0112e151aa697b283dff425370c7cf0f":[function(require,module,exports) {
-module.exports = JSON.parse("[{\"name\":\"Alm\",\"id\":\"alm\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Ask\",\"id\":\"ask_-_planteslekt\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Barlind\",\"id\":\"barlind\",\"categories\":[\"needle\"]},{\"name\":\"Furu\",\"id\":\"furu\",\"categories\":[\"needle\"]},{\"name\":\"Gran\",\"id\":\"gran\",\"categories\":[\"needle\"]},{\"name\":\"Einer\",\"id\":\"einer\",\"categories\":[\"needle\"]},{\"name\":\"Lerk\",\"id\":\"lerk\",\"categories\":[\"needle\"]},{\"name\":\"Lind\",\"id\":\"lind\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Bjørk\",\"id\":\"bjørk\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Hassel\",\"id\":\"hassel\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Osp\",\"id\":\"osp\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Or\",\"id\":\"or\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Spisslønn\",\"id\":\"lønn_-_treslekt\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Platanlønn\",\"id\":\"platanlønn\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Bøk\",\"id\":\"bøk\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Selje\",\"id\":\"selje\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Eik\",\"id\":\"eik\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]}]");
+module.exports = JSON.parse("[{\"name\":\"Alm\",\"id\":\"alm\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Ask\",\"id\":\"ask_-_planteslekt\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Barlind\",\"id\":\"barlind\",\"categories\":[\"needle\"]},{\"name\":\"Furu\",\"id\":\"furu\",\"categories\":[\"needle\"]},{\"name\":\"Gran\",\"id\":\"gran\",\"categories\":[\"needle\"]},{\"name\":\"Einer\",\"id\":\"einer\",\"categories\":[\"needle\"]},{\"name\":\"Lerk\",\"id\":\"lerk\",\"categories\":[\"needle\"]},{\"name\":\"Lind\",\"id\":\"lind\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Bjørk\",\"id\":\"bjørk\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Hassel\",\"id\":\"hassel\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Osp\",\"id\":\"osp\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Or\",\"id\":\"or\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Spisslønn\",\"id\":\"lønn_-_treslekt\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Platanlønn\",\"id\":\"platanlønn\",\"preferred_image\":8,\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Bøk\",\"id\":\"bøk\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Selje\",\"id\":\"selje\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Eik\",\"id\":\"eik\",\"preferred_image\":3,\"categories\":[\"leaf\",\"simple\",\"pointy\"]}]");
 },{}],"69968aec69aede2146c7bd19b5db250a":[function(require,module,exports) {
 "use strict";
 
@@ -36699,7 +36698,7 @@ try {
 `;
 
   const Header = ({
-    currentLevel = {}
+    children
   }) => {
     _s();
 
@@ -36715,7 +36714,7 @@ try {
         lineNumber: 22,
         columnNumber: 10
       }
-    }, currentLevel.header);
+    }, children);
   };
 
   _s(Header, "pkHmaVRPskBaU4tMJuJJpV42k1I=", false, function () {
@@ -36885,6 +36884,8 @@ try {
 
   const getRandomImage = images => images.length && images[Math.floor(images.length * Math.random())];
 
+  const getImage = (images, preferred_image) => preferred_image ? images[preferred_image] : getRandomImage(images);
+
   const ImageArray = ({
     currentLevel,
     forest,
@@ -36895,7 +36896,7 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22,
+          lineNumber: 24,
           columnNumber: 12
         }
       }, "\"No trees found\"");
@@ -36906,22 +36907,23 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 32,
         columnNumber: 5
       }
     }, trees.map(({
       name,
       id,
-      images
+      images,
+      preferred_image
     }) => /*#__PURE__*/_react.default.createElement(_Image.Image, {
       id: id,
       displayName: name,
       selected: selectedImage === name,
-      src: getRandomImage(images).standard_size_url || getRandomImage(images).full_size_url,
+      src: getImage(images, preferred_image).standard_size_url || getImage(images, preferred_image).full_size_url,
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32,
+        lineNumber: 34,
         columnNumber: 9
       }
     })));
@@ -37298,6 +37300,8 @@ try {
 
   var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+  var _Header = _interopRequireDefault(require("./Header"));
+
   var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/InfoPage.tsx";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -37306,6 +37310,16 @@ try {
     background: white;
     opacity: 0.8;
     color: black;
+`;
+  const ImageWrapper = _c2 = _styledComponents.default.div`
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;`;
+  const StyledImage = _c3 = _styledComponents.default.img`
+  width: 360px;
+  height: 260px;
+  margin: 5px;
 `;
 
   const InfoPage = ({
@@ -37316,7 +37330,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 25,
         columnNumber: 21
       }
     }, "No info found");
@@ -37324,35 +37338,59 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
+        lineNumber: 27,
         columnNumber: 5
       }
-    }, /*#__PURE__*/_react.default.createElement("div", {
+    }, /*#__PURE__*/_react.default.createElement(_Header.default, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28,
+        columnNumber: 7
+      }
+    }, tree.title), /*#__PURE__*/_react.default.createElement(ImageWrapper, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29,
+        columnNumber: 7
+      }
+    }, tree.images.map(image => /*#__PURE__*/_react.default.createElement(StyledImage, {
+      src: image.standard_size_url || image.full_size_url,
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 11
+      }
+    }))), /*#__PURE__*/_react.default.createElement("div", {
       dangerouslySetInnerHTML: {
         __html: tree.xhtml_body
       },
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 34,
         columnNumber: 7
       }
     }));
   };
 
-  _c2 = InfoPage;
+  _c4 = InfoPage;
   var _default = InfoPage;
   exports.default = _default;
 
-  var _c, _c2;
+  var _c, _c2, _c3, _c4;
 
   $RefreshReg$(_c, "Wrapper");
-  $RefreshReg$(_c2, "InfoPage");
+  $RefreshReg$(_c2, "ImageWrapper");
+  $RefreshReg$(_c3, "StyledImage");
+  $RefreshReg$(_c4, "InfoPage");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","styled-components":"00f29180361410c43755b2aab57c93df"}]},{},["64c1770b35b04eb343009bb27a752262","2375f765180358b080bc735ae31d0590","df666a075bb9d13afb1bc5a2f8743d35","c181f344c621c74b950663989dcd2358"], null)
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","styled-components":"00f29180361410c43755b2aab57c93df","./Header":"69968aec69aede2146c7bd19b5db250a"}]},{},["64c1770b35b04eb343009bb27a752262","2375f765180358b080bc735ae31d0590","df666a075bb9d13afb1bc5a2f8743d35","c181f344c621c74b950663989dcd2358"], null)
 
 //# sourceMappingURL=hvilketTreErDet.9e4de8a2.js.map
