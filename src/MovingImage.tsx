@@ -10,7 +10,7 @@ const Image = styledComponentsCjs.img`
     height: 18em;
     background-color: white;
     box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s;
+    transition: transform 0.2s;
 `;
 
 const MovingImage = (props) => {

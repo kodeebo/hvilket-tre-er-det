@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styledComponentsCjs from "styled-components";
-import Header from "./Header";
 import Spinner from "./Loading";
 import { useLocation } from "react-router-dom";
 
@@ -24,6 +23,14 @@ const StyledImage = styledComponentsCjs.img`
 const Text = styledComponentsCjs.div`
   color: black;
 `;
+
+const Header = styledComponentsCjs.div`
+display: flex;
+justify-content: center;
+font-size: 40px;
+font-family: Roboto;
+font-weight: bold;
+padding: 30px;`;
 
 const InfoPage = ({ tree }) => {
   const location = useLocation();
