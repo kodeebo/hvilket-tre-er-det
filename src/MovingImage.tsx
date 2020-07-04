@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styledComponentsCjs from "styled-components";
 
 const Wrapper = styledComponentsCjs.div`
-    perspective: 25px;
+    perspective: 13px;
 `;
 
 const Image = styledComponentsCjs.img`

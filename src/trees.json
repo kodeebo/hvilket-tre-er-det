@@ -1,5 +1,5 @@
 [
-  { "name": "Alm", "id": "alm", "categories": ["leaf", "simple", "sawtooth"] },
+  { "name": "Alm", "id": "alm", "preferred_image": 11, "categories": ["leaf", "simple", "sawtooth"] },
   { "name": "Ask", "id": "ask_-_planteslekt", "categories": ["leaf", "multiple"] },
   { "name": "Barlind", "id": "barlind", "categories": ["needle"] },
   { "name": "Furu", "id": "furu", "categories": ["needle"] },
