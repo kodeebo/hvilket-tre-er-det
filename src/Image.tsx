@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
+import MovingImage from "./MovingImage";
 
 const scale = keyframes`
   0% {
@@ -40,7 +41,7 @@ export const Image = ({ displayName, id, selected, src }) => {
     <ImageWrapper>
       <ImageHeader>{displayName}</ImageHeader>
       <Link to={(location) => `${location.pathname.length > 1 ? location.pathname : ""}/${id}`}>
-        <StyledImage selected={selected} src={src} />
+        <MovingImage selected={selected} src={src} />
       </Link>
     </ImageWrapper>
   );

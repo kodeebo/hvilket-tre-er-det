@@ -29261,7 +29261,7 @@ try {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.GlobalStyle = void 0;
+  exports.GlobalStyle = exports.colors = void 0;
 
   var _react = _interopRequireDefault(require("react"));
 
@@ -29271,12 +29271,17 @@ try {
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+  const colors = {
+    lightBrown: "#cdc08c",
+    green: "#9c964a",
+    yellow: "#fad77b"
+  };
+  exports.colors = colors;
   const Global = _c = (0, _styledComponents.createGlobalStyle)`
   body {
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(2,103,9,1) 70%, rgba(0,204,255,1) 100%);
+    background: whitesmoke;
     height: 100%;
-    color: white;
+    color: ${colors.green};
     font-family: Montserrat;
   }
 `;
@@ -29286,7 +29291,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 21,
         columnNumber: 10
       }
     });
@@ -36693,7 +36698,6 @@ try {
   font-size: 40px;
   font-family: Roboto;
   font-weight: bold;
-  color: black;
   padding: 30px;
 `;
 
@@ -36711,7 +36715,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 21,
         columnNumber: 10
       }
     }, children);
@@ -36962,6 +36966,8 @@ try {
 
   var _reactRouterDom = require("react-router-dom");
 
+  var _MovingImage = _interopRequireDefault(require("./MovingImage"));
+
   var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/Image.tsx";
 
   function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -36986,7 +36992,7 @@ try {
   margin: 20px 0;
   text-align: center;
 `;
-  const StyledImage = _c3 = _styledComponents.default.img`
+  const StyledImage = _styledComponents.default.img`
   cursor: pointer;
   width: 350px;
   height: 260px;
@@ -37010,14 +37016,14 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 41,
         columnNumber: 5
       }
     }, /*#__PURE__*/_react.default.createElement(ImageHeader, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 42,
         columnNumber: 7
       }
     }, displayName), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -37025,36 +37031,148 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 7
       }
-    }, /*#__PURE__*/_react.default.createElement(StyledImage, {
+    }, /*#__PURE__*/_react.default.createElement(_MovingImage.default, {
       selected: selected,
       src: src,
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 44,
         columnNumber: 9
       }
     })));
   };
 
   exports.Image = Image;
-  _c4 = Image;
+  _c3 = Image;
 
-  var _c, _c2, _c3, _c4;
+  var _c, _c2, _c3;
 
   $RefreshReg$(_c, "ImageWrapper");
   $RefreshReg$(_c2, "ImageHeader");
-  $RefreshReg$(_c3, "StyledImage");
-  $RefreshReg$(_c4, "Image");
+  $RefreshReg$(_c3, "Image");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"9a152c3b95760a99b6efb2b5e75f823d":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","./MovingImage":"0c69af154dbd3da34f1cf57ee40b52f5"}],"0c69af154dbd3da34f1cf57ee40b52f5":[function(require,module,exports) {
+"use strict";
+
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireWildcard(require("react"));
+
+  var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+  var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/MovingImage.tsx",
+      _s = $RefreshSig$();
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+  function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+  const Wrapper = _c = _styledComponents.default.div`
+    perspective: 25px;
+`;
+  const Image = _c2 = _styledComponents.default.img`
+    width: 20em;
+    height: 18em;
+    background-color: white;
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s;
+`;
+
+  const MovingImage = props => {
+    _s();
+
+    const wrapper = (0, _react.useRef)(null);
+    const image = (0, _react.useRef)(null);
+    const [mousePos, setMousePos] = (0, _react.useState)({
+      x: 0,
+      y: 0
+    });
+    const [mouseOrigin, setMouseOrigin] = (0, _react.useState)({
+      x: 0,
+      y: 0
+    });
+    (0, _react.useEffect)(() => {
+      setMouseOrigin({
+        x: wrapper.current.offsetLeft + Math.floor(wrapper.current.offsetWidth / 2),
+        y: wrapper.current.offsetTop + Math.floor(wrapper.current.offsetHeight / 2)
+      });
+    }, []);
+
+    const onMouseLeaveHandler = () => {
+      image.current.style = "";
+    };
+
+    const onMouseMoveHandler = e => {
+      setMousePos({
+        x: e.clientX - mouseOrigin.x,
+        y: (e.clientY - mouseOrigin.y) * -1
+      });
+      var style = "rotateX(" + (mousePos.y / image.current.offsetHeight / 2).toFixed(2) + "deg) rotateY(" + (mousePos.x / image.current.offsetWidth / 2).toFixed(2) + "deg)";
+      image.current.style.transform = style;
+    };
+
+    return /*#__PURE__*/_react.default.createElement(Wrapper, {
+      ref: wrapper,
+      onMouseEnter: onMouseMoveHandler,
+      onMouseLeave: onMouseLeaveHandler,
+      onMouseMove: onMouseMoveHandler,
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49,
+        columnNumber: 5
+      }
+    }, /*#__PURE__*/_react.default.createElement(Image, _extends({
+      ref: image
+    }, props, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55,
+        columnNumber: 7
+      }
+    })));
+  };
+
+  _s(MovingImage, "Qarn2MlZXgWS3aNDJvV+SU6Q4Iw=");
+
+  _c3 = MovingImage;
+  var _default = MovingImage;
+  exports.default = _default;
+
+  var _c, _c2, _c3;
+
+  $RefreshReg$(_c, "Wrapper");
+  $RefreshReg$(_c2, "Image");
+  $RefreshReg$(_c3, "MovingImage");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"9a152c3b95760a99b6efb2b5e75f823d":[function(require,module,exports) {
 "use strict";
 
 var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -37296,101 +37414,206 @@ try {
   });
   exports.default = void 0;
 
-  var _react = _interopRequireDefault(require("react"));
+  var _react = _interopRequireWildcard(require("react"));
 
   var _styledComponents = _interopRequireDefault(require("styled-components"));
 
   var _Header = _interopRequireDefault(require("./Header"));
 
-  var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/InfoPage.tsx";
+  var _Loading = _interopRequireDefault(require("./Loading"));
+
+  var _reactRouterDom = require("react-router-dom");
+
+  var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/InfoPage.tsx",
+      _s = $RefreshSig$();
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+  function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
   const Wrapper = _c = _styledComponents.default.div`
-    background: white;
-    opacity: 0.8;
-    color: black;
+    padding: 20px;
 `;
   const ImageWrapper = _c2 = _styledComponents.default.div`
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-flex-wrap: wrap;`;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+`;
   const StyledImage = _c3 = _styledComponents.default.img`
   width: 360px;
   height: 260px;
   margin: 5px;
 `;
+  const Text = _c4 = _styledComponents.default.div`
+  color: black;
+`;
 
   const InfoPage = ({
     tree
   }) => {
-    console.log(tree);
-    if (!tree) return /*#__PURE__*/_react.default.createElement("span", {
+    _s();
+
+    const location = (0, _reactRouterDom.useLocation)();
+    const [ourTree, setTree] = (0, _react.useState)(tree);
+
+    const fetchTree = async () => {
+      const res = await fetch(`https://snl.no/${location.pathname.split("/").pop()}.json`, {
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      const json = await res.json();
+      setTree(json);
+    };
+
+    (0, _react.useEffect)(() => {
+      if (!tree) {
+        fetchTree();
+      }
+    }, [tree]);
+    if (!ourTree) return /*#__PURE__*/_react.default.createElement(_Loading.default, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
-        columnNumber: 21
+        lineNumber: 45,
+        columnNumber: 24
       }
-    }, "No info found");
+    });
     return /*#__PURE__*/_react.default.createElement(Wrapper, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 47,
         columnNumber: 5
       }
     }, /*#__PURE__*/_react.default.createElement(_Header.default, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 48,
         columnNumber: 7
       }
-    }, tree.title), /*#__PURE__*/_react.default.createElement(ImageWrapper, {
+    }, ourTree.title), /*#__PURE__*/_react.default.createElement(ImageWrapper, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29,
+        lineNumber: 49,
         columnNumber: 7
       }
-    }, tree.images.map(image => /*#__PURE__*/_react.default.createElement(StyledImage, {
+    }, ourTree.images.map(image => /*#__PURE__*/_react.default.createElement(StyledImage, {
       src: image.standard_size_url || image.full_size_url,
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 51,
         columnNumber: 11
       }
-    }))), /*#__PURE__*/_react.default.createElement("div", {
+    }))), /*#__PURE__*/_react.default.createElement(Text, {
       dangerouslySetInnerHTML: {
-        __html: tree.xhtml_body
+        __html: ourTree.xhtml_body
       },
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34,
+        lineNumber: 54,
         columnNumber: 7
       }
     }));
   };
 
-  _c4 = InfoPage;
+  _s(InfoPage, "wE55koPg8D2/eUK2mQW91aR6hxs=", false, function () {
+    return [_reactRouterDom.useLocation];
+  });
+
+  _c5 = InfoPage;
   var _default = InfoPage;
   exports.default = _default;
 
-  var _c, _c2, _c3, _c4;
+  var _c, _c2, _c3, _c4, _c5;
 
   $RefreshReg$(_c, "Wrapper");
   $RefreshReg$(_c2, "ImageWrapper");
   $RefreshReg$(_c3, "StyledImage");
-  $RefreshReg$(_c4, "InfoPage");
+  $RefreshReg$(_c4, "Text");
+  $RefreshReg$(_c5, "InfoPage");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","styled-components":"00f29180361410c43755b2aab57c93df","./Header":"69968aec69aede2146c7bd19b5db250a"}]},{},["64c1770b35b04eb343009bb27a752262","2375f765180358b080bc735ae31d0590","df666a075bb9d13afb1bc5a2f8743d35","c181f344c621c74b950663989dcd2358"], null)
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","styled-components":"00f29180361410c43755b2aab57c93df","./Header":"69968aec69aede2146c7bd19b5db250a","./Loading":"9257c43aad9abcada8fe9a6ea2e8318c","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c"}],"9257c43aad9abcada8fe9a6ea2e8318c":[function(require,module,exports) {
+"use strict";
+
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(require("react"));
+
+  var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+  var _jsxFileName = "/Users/torgeir/Documents/Koding/hvilketTreErDet/src/Loading.tsx";
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  const SpinnerDiv = _c = _styledComponents.default.div`
+  border: calc(15px solid rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  animation: spinnerAnimation 0.7s linear infinite;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 10px;
+  @keyframes spinnerAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+  const Spinner = ({
+    size,
+    margin,
+    inverted
+  }) => /*#__PURE__*/_react.default.createElement(SpinnerDiv, {
+    size: size,
+    margin: margin,
+    inverted: inverted,
+    __self: void 0,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 49
+    }
+  });
+
+  _c2 = Spinner;
+  var _default = Spinner;
+  exports.default = _default;
+
+  var _c, _c2;
+
+  $RefreshReg$(_c, "SpinnerDiv");
+  $RefreshReg$(_c2, "Spinner");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}]},{},["64c1770b35b04eb343009bb27a752262","2375f765180358b080bc735ae31d0590","df666a075bb9d13afb1bc5a2f8743d35","c181f344c621c74b950663989dcd2358"], null)
 
 //# sourceMappingURL=hvilketTreErDet.9e4de8a2.js.map

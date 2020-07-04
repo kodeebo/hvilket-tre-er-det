@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   font-size: 40px;
   font-family: Roboto;
   font-weight: bold;
-  color: black;
   padding: 30px;
 `;
 

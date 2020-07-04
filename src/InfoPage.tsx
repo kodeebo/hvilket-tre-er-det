@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styledComponentsCjs from "styled-components";
 import Header from "./Header";
+import Spinner from "./Loading";
+import { useLocation } from "react-router-dom";
 
 const Wrapper = styledComponentsCjs.div`
-    background: white;
-    opacity: 0.8;
-    color: black;
+    padding: 20px;
 `;
 
 const ImageWrapper = styledComponentsCjs.div`
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-flex-wrap: wrap;`;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+`;
 
 const StyledImage = styledComponentsCjs.img`
   width: 360px;
@@ -20,18 +20,38 @@ const StyledImage = styledComponentsCjs.img`
   margin: 5px;
 `;
 
+const Text = styledComponentsCjs.div`
+  color: black;
+`;
+
 const InfoPage = ({ tree }) => {
-  console.log(tree);
-  if (!tree) return <span>No info found</span>;
+  const location = useLocation();
+  const [ourTree, setTree] = useState(tree);
+  const fetchTree = async () => {
+    const res = await fetch(`https://snl.no/${location.pathname.split("/").pop()}.json`, {
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await res.json();
+    setTree(json);
+  };
+  useEffect(() => {
+    if (!tree) {
+      fetchTree();
+    }
+  }, [tree]);
+  if (!ourTree) return <Spinner />;
   return (
     <Wrapper>
-      <Header>{tree.title}</Header>
+      <Header>{ourTree.title}</Header>
       <ImageWrapper>
-        {tree.images.map((image) => (
+        {ourTree.images.map((image) => (
           <StyledImage src={image.standard_size_url || image.full_size_url} />
         ))}
       </ImageWrapper>
-      <div dangerouslySetInnerHTML={{ __html: tree.xhtml_body }} />
+      <Text dangerouslySetInnerHTML={{ __html: ourTree.xhtml_body }} />
     </Wrapper>
   );
 };
