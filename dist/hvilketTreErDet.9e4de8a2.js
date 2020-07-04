@@ -37443,6 +37443,7 @@ try {
 `;
   const StyledImage = _c3 = _styledComponents.default.img`
   width: 360px;
+  min-width: 360px;
   height: 260px;
   margin: 5px;
 `;
@@ -37478,7 +37479,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 46,
         columnNumber: 24
       }
     });
@@ -37486,21 +37487,21 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 48,
         columnNumber: 5
       }
     }, /*#__PURE__*/_react.default.createElement(_Header.default, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 49,
         columnNumber: 7
       }
     }, ourTree.title), /*#__PURE__*/_react.default.createElement(ImageWrapper, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49,
+        lineNumber: 50,
         columnNumber: 7
       }
     }, ourTree.images.map(image => /*#__PURE__*/_react.default.createElement(StyledImage, {
@@ -37508,7 +37509,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51,
+        lineNumber: 52,
         columnNumber: 11
       }
     }))), /*#__PURE__*/_react.default.createElement(Text, {
@@ -37518,7 +37519,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 55,
         columnNumber: 7
       }
     }));
