@@ -29272,16 +29272,17 @@ try {
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   const colors = {
-    lightBrown: "#cdc08c",
-    green: "#9c964a",
-    yellow: "#fad77b"
+    lightBrown: "#c27d38",
+    blue: "#798e87",
+    yellow: "#798e87",
+    black: "#29211f"
   };
   exports.colors = colors;
   const Global = _c = (0, _styledComponents.createGlobalStyle)`
   body {
     background: whitesmoke;
     height: 100%;
-    color: ${colors.green};
+    color: ${colors.black};
     font-family: Montserrat;
   }
 `;
@@ -29291,7 +29292,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 10
       }
     });
@@ -36581,7 +36582,7 @@ try {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","./structure":"99329e77cba7ac7d082b0cc45e61aa2a","./trees.json":"0112e151aa697b283dff425370c7cf0f","./Header":"69968aec69aede2146c7bd19b5db250a","./Content":"1dcc0dd434ee7bc1ed717539de9c09a6"}],"99329e77cba7ac7d082b0cc45e61aa2a":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","./structure":"99329e77cba7ac7d082b0cc45e61aa2a","./trees.json":"0112e151aa697b283dff425370c7cf0f","./Header":"69968aec69aede2146c7bd19b5db250a","./Content":"1dcc0dd434ee7bc1ed717539de9c09a6","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"99329e77cba7ac7d082b0cc45e61aa2a":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36663,7 +36664,7 @@ var _default = {
 };
 exports.default = _default;
 },{}],"0112e151aa697b283dff425370c7cf0f":[function(require,module,exports) {
-module.exports = JSON.parse("[{\"name\":\"Alm\",\"id\":\"alm\",\"preferred_image\":11,\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Ask\",\"id\":\"ask_-_planteslekt\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Barlind\",\"id\":\"barlind\",\"categories\":[\"needle\"]},{\"name\":\"Furu\",\"id\":\"furu\",\"categories\":[\"needle\"]},{\"name\":\"Gran\",\"id\":\"gran\",\"categories\":[\"needle\"]},{\"name\":\"Einer\",\"id\":\"einer\",\"categories\":[\"needle\"]},{\"name\":\"Lerk\",\"id\":\"lerk\",\"categories\":[\"needle\"]},{\"name\":\"Lind\",\"id\":\"lind\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Bjørk\",\"id\":\"bjørk\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Hassel\",\"id\":\"hassel\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Osp\",\"id\":\"osp\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Or\",\"id\":\"or\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Spisslønn\",\"id\":\"lønn_-_treslekt\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Platanlønn\",\"id\":\"platanlønn\",\"preferred_image\":8,\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Bøk\",\"id\":\"bøk\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Selje\",\"id\":\"selje\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Eik\",\"id\":\"eik\",\"preferred_image\":3,\"categories\":[\"leaf\",\"simple\",\"pointy\"]}]");
+module.exports = JSON.parse("[{\"name\":\"Alm\",\"id\":\"alm\",\"preferred_image\":11,\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Ask\",\"id\":\"ask_-_planteslekt\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Rogn\",\"id\":\"rogn\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Hestekastanje\",\"id\":\"hestekastanje\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Rødhyll\",\"id\":\"rødhyll\",\"categories\":[\"leaf\",\"multiple\"]},{\"name\":\"Barlind\",\"id\":\"barlind\",\"categories\":[\"needle\"]},{\"name\":\"Furu\",\"id\":\"furu\",\"categories\":[\"needle\"]},{\"name\":\"Gran\",\"id\":\"gran\",\"categories\":[\"needle\"]},{\"name\":\"Einer\",\"id\":\"einer\",\"categories\":[\"needle\"]},{\"name\":\"Lerk\",\"id\":\"lerk\",\"categories\":[\"needle\"]},{\"name\":\"Lind\",\"id\":\"lind\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Bjørk\",\"id\":\"bjørk\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Hassel\",\"id\":\"hassel\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Osp\",\"id\":\"osp\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Or\",\"id\":\"or\",\"categories\":[\"leaf\",\"simple\",\"sawtooth\"]},{\"name\":\"Spisslønn\",\"id\":\"lønn_-_treslekt\",\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Platanlønn\",\"id\":\"platanlønn\",\"preferred_image\":8,\"categories\":[\"leaf\",\"simple\",\"pointy\"]},{\"name\":\"Bøk\",\"id\":\"bøk\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Selje\",\"id\":\"selje\",\"categories\":[\"leaf\",\"simple\",\"smooth\"]},{\"name\":\"Eik\",\"id\":\"eik\",\"preferred_image\":3,\"categories\":[\"leaf\",\"simple\",\"pointy\"]}]");
 },{}],"69968aec69aede2146c7bd19b5db250a":[function(require,module,exports) {
 "use strict";
 
@@ -36698,19 +36699,30 @@ try {
 
   const Wrapper = _c = _styledComponents.default.div`
   display: flex;
-  justify-content: space-between;
-  font-size: 40px;
-  font-family: Roboto;
-  font-weight: bold;
-  padding: 30px;
+  position: relative;
+  align-items: flex-end;
 `;
   const Icon = _c2 = _styledComponents.default.img`
   height: 128px;
   width: 128px;
 `;
-  const Dummy = _c3 = _styledComponents.default.div`
+  const Text = _c3 = _styledComponents.default.div`
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: bold;
+`;
+  const Dummy = _styledComponents.default.div`
   width: 128px;
 `;
+  const Breadcrumbs = _c4 = _styledComponents.default.div`
+  margin: 10px;
+  font-size: 20px;
+`;
+  const Breadcrumb = _c5 = _styledComponents.default.span``;
 
   const Header = ({
     children
@@ -36718,15 +36730,14 @@ try {
     _s();
 
     const location = (0, _reactRouterDom.useLocation)();
-    const paths = location.pathname.split("/");
-    console.log(paths);
+    const paths = location.pathname.split("/").filter(path => path);
     const headers = paths.map(path => _structure.default[`/${path}`]?.header); // TODO: how to show double nested headers when id always are simple?
 
     return /*#__PURE__*/_react.default.createElement(Wrapper, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33,
+        lineNumber: 48,
         columnNumber: 5
       }
     }, /*#__PURE__*/_react.default.createElement(_reactRouterDom2.Link, {
@@ -36734,7 +36745,7 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34,
+        lineNumber: 49,
         columnNumber: 7
       }
     }, /*#__PURE__*/_react.default.createElement(Icon, {
@@ -36742,39 +36753,55 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35,
+        lineNumber: 50,
         columnNumber: 9
       }
-    })), children, /*#__PURE__*/_react.default.createElement(Dummy, {
+    })), /*#__PURE__*/_react.default.createElement(Text, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
+        lineNumber: 52,
         columnNumber: 7
       }
-    }));
+    }, "Norske Tr\xE6r"), /*#__PURE__*/_react.default.createElement(Breadcrumbs, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53,
+        columnNumber: 7
+      }
+    }, headers.map(header => header && /*#__PURE__*/_react.default.createElement(Breadcrumb, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 44
+      }
+    }, `${header} ${String.fromCharCode(0x203a)} `))));
   };
 
   _s(Header, "pkHmaVRPskBaU4tMJuJJpV42k1I=", false, function () {
     return [_reactRouterDom.useLocation];
   });
 
-  _c4 = Header;
+  _c6 = Header;
   var _default = Header;
   exports.default = _default;
 
-  var _c, _c2, _c3, _c4;
+  var _c, _c2, _c3, _c4, _c5, _c6;
 
   $RefreshReg$(_c, "Wrapper");
   $RefreshReg$(_c2, "Icon");
-  $RefreshReg$(_c3, "Dummy");
-  $RefreshReg$(_c4, "Header");
+  $RefreshReg$(_c3, "Text");
+  $RefreshReg$(_c4, "Breadcrumbs");
+  $RefreshReg$(_c5, "Breadcrumb");
+  $RefreshReg$(_c6, "Header");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","./structure":"99329e77cba7ac7d082b0cc45e61aa2a","../assets/treeIcon128.png":"dd5300cfb332ed09f8f28ba321cb2ebe","react-router-dom/cjs/react-router-dom.min":"b4c82913c92478bad5096c098843c364"}],"dd5300cfb332ed09f8f28ba321cb2ebe":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","./structure":"99329e77cba7ac7d082b0cc45e61aa2a","../assets/treeIcon128.png":"dd5300cfb332ed09f8f28ba321cb2ebe","react-router-dom/cjs/react-router-dom.min":"b4c82913c92478bad5096c098843c364","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"dd5300cfb332ed09f8f28ba321cb2ebe":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("b307f53b5bcd82a0", "8502e064bf481e39");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"2146da1905b95151ed14d455c784e7b7":[function(require,module,exports) {
 "use strict";
@@ -37004,7 +37031,7 @@ try {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","react-router-dom/cjs/react-router-dom.min":"b4c82913c92478bad5096c098843c364","./ImageArray":"562b6393d7ef1df27866cc91eb45125a","./Categories":"9a152c3b95760a99b6efb2b5e75f823d","styled-components":"00f29180361410c43755b2aab57c93df","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","./InfoPage":"f95419173dd464dbc8e8f4327345b6b4"}],"562b6393d7ef1df27866cc91eb45125a":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","react-router-dom/cjs/react-router-dom.min":"b4c82913c92478bad5096c098843c364","styled-components":"00f29180361410c43755b2aab57c93df","./ImageArray":"562b6393d7ef1df27866cc91eb45125a","./Categories":"9a152c3b95760a99b6efb2b5e75f823d","./InfoPage":"f95419173dd464dbc8e8f4327345b6b4","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"562b6393d7ef1df27866cc91eb45125a":[function(require,module,exports) {
 "use strict";
 
 var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -37208,7 +37235,7 @@ try {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","./MovingImage":"0c69af154dbd3da34f1cf57ee40b52f5"}],"0c69af154dbd3da34f1cf57ee40b52f5":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","./MovingImage":"0c69af154dbd3da34f1cf57ee40b52f5","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"0c69af154dbd3da34f1cf57ee40b52f5":[function(require,module,exports) {
 "use strict";
 
 var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -37399,6 +37426,7 @@ try {
       name,
       id
     }) => /*#__PURE__*/_react.default.createElement(_Image.Image, {
+      key: id,
       id: id,
       displayName: name,
       selected: selectedImage === name,
@@ -37589,7 +37617,7 @@ padding: 30px;`;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","styled-components":"00f29180361410c43755b2aab57c93df","./Loading":"9257c43aad9abcada8fe9a6ea2e8318c","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c"}],"9257c43aad9abcada8fe9a6ea2e8318c":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","./Loading":"9257c43aad9abcada8fe9a6ea2e8318c","react-router-dom":"4f3f770c9b31050e5f824c9e881c359c","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"9257c43aad9abcada8fe9a6ea2e8318c":[function(require,module,exports) {
 "use strict";
 
 var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");

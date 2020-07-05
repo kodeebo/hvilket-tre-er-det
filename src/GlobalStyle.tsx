@@ -3,16 +3,17 @@ import React from "react";
 import { createGlobalStyle } from "styled-components";
 
 export const colors = {
-  lightBrown: "#cdc08c",
-  green: "#9c964a",
-  yellow: "#fad77b",
+  lightBrown: "#c27d38",
+  blue: "#798e87",
+  yellow: "#798e87",
+  black: "#29211f",
 };
 
 const Global = createGlobalStyle`
   body {
     background: whitesmoke;
     height: 100%;
-    color: ${colors.green};
+    color: ${colors.black};
     font-family: Montserrat;
   }
 `;
