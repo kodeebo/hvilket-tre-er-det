@@ -37,7 +37,7 @@ const Breadcrumbs = styled.div`
 
 const Breadcrumb = styled.span``;
 
-const Header = ({ children }) => {
+const Header = () => {
   const location = useLocation();
   const paths = location.pathname.split("/").filter((path) => path);
 

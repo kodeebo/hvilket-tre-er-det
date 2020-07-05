@@ -57,7 +57,7 @@ export const Main = () => {
 
   return (
     <Wrapper>
-      <Header>{currentLevel.header}</Header>
+      <Header />
       <Content currentLevel={currentLevel} forest={forest} />
     </Wrapper>
   );
