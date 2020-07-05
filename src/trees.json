@@ -18,5 +18,6 @@
   { "name": "Platanlønn", "id": "platanlønn", "preferred_image": 8, "categories": ["leaf", "simple", "pointy"] },
   { "name": "Bøk", "id": "bøk", "categories": ["leaf", "simple", "smooth"] },
   { "name": "Selje", "id": "selje", "categories": ["leaf", "simple", "smooth"] },
-  { "name": "Eik", "id": "eik", "preferred_image": 3, "categories": ["leaf", "simple", "pointy"] }
+  { "name": "Eik", "id": "eik", "preferred_image": 3, "categories": ["leaf", "simple", "pointy"] },
+  { "name": "Kristtorn", "id": "kristtorn", "preferred_image": 3, "categories": ["leaf", "simple", "pointy"] }
 ]
