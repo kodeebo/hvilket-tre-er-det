@@ -19,7 +19,7 @@ const getRandomImage = (images) => images.length && images[Math.floor(images.len
 
 const getImage = (images, preferred_image) => (preferred_image ? images[preferred_image] : getRandomImage(images));
 
-export const ImageArray = ({ currentLevel, forest, selectedImage }: Props) => {
+const ListOfTrees = ({ currentLevel, forest, selectedImage }: Props) => {
   if (!forest) {
     return <div>"No trees found"</div>;
   }
@@ -32,7 +32,8 @@ export const ImageArray = ({ currentLevel, forest, selectedImage }: Props) => {
     <StyledWrapper>
       {trees.map(({ name, id, images, preferred_image }) => (
         <Image
-          id={id}
+          key={id}
+          to={(location) => ({ ...location, search: `?${id}` })}
           displayName={name}
           selected={selectedImage === name}
           src={getImage(images, preferred_image).standard_size_url || getImage(images, preferred_image).full_size_url}
@@ -41,3 +42,5 @@ export const ImageArray = ({ currentLevel, forest, selectedImage }: Props) => {
     </StyledWrapper>
   );
 };
+
+export default ListOfTrees;

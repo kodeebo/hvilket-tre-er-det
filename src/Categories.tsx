@@ -32,8 +32,14 @@ const Categories = ({ currentLevel, selectedImage }: Props) => {
 
   return (
     <StyledWrapper>
-      {currentLevel.categories.map(({ name, id }) => (
-        <Image key={id} id={id} displayName={name} selected={selectedImage === name} src={images[id]} />
+      {currentLevel.categories.map(({ header, id }) => (
+        <Image
+          key={id}
+          to={(location) => `${location.pathname.length > 1 ? location.pathname : ""}/${id}`}
+          displayName={header}
+          selected={selectedImage === header}
+          src={images[id]}
+        />
       ))}
     </StyledWrapper>
   );

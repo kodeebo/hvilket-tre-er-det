@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import styledComponentsCjs from "styled-components";
 
-import { ImageArray } from "./ImageArray";
+import ListOfTrees from "./ListOfTrees";
 import Categories from "./Categories";
 import InfoPage from "./InfoPage";
 
@@ -13,8 +13,8 @@ const Wrapper = styledComponentsCjs.div`
 const Content = ({ currentLevel, forest }) => {
   const location = useLocation();
 
-  if (!currentLevel.id) {
-    const treeId = location.pathname.split("/").pop();
+  if (location.search) {
+    const treeId = location.search.replace("?", "");
     console.log(treeId);
     const foundTree = Object.keys(forest).find((tree) => forest[tree].id === treeId);
     console.log(foundTree);
@@ -28,7 +28,7 @@ const Content = ({ currentLevel, forest }) => {
   return (
     <Wrapper>
       {currentLevel.bottom ? (
-        <ImageArray
+        <ListOfTrees
           currentLevel={currentLevel}
           forest={forest}
           selectedImage={location.pathname !== "/" && location.pathname}

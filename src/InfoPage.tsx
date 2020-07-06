@@ -56,7 +56,7 @@ const InfoPage = ({ tree }) => {
       <Header>{ourTree.title}</Header>
       <ImageWrapper>
         {ourTree.images.map((image) => (
-          <StyledImage src={image.standard_size_url || image.full_size_url} />
+          <StyledImage key={image.id} src={image.standard_size_url || image.full_size_url} />
         ))}
       </ImageWrapper>
       <Text dangerouslySetInnerHTML={{ __html: ourTree.xhtml_body }} />

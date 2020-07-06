@@ -14,20 +14,28 @@ export interface Structure {
   header: string;
   id: string;
   bottom: boolean;
-  categories?: Array<{ name: string; id: string }>;
+  categories?: Array<{ header: string; id: string }>;
 }
+
+const findCurrenCat = (paths, currentPath, structure, breadcrumb = []) => {
+  if (paths.length === 0) return [structure, breadcrumb];
+  const currentCat = structure.categories.find((cat) => cat.id === paths[currentPath]);
+  breadcrumb.push(currentCat);
+  if (paths.length === currentPath + 1) return [currentCat, breadcrumb];
+  return findCurrenCat(paths, currentPath + 1, currentCat, breadcrumb);
+};
 
 export const Main = () => {
   const location = useLocation();
   const [forest, buildForest] = useState({});
-
-  const currentLevel = structure[location.pathname] || {};
-
+  console.log(location);
+  const paths = location.pathname.split("/").filter((path) => path);
+  console.log(paths);
+  const [currentCategory, breadcrumb] = findCurrenCat(paths, 0, structure);
+  console.log(currentCategory);
   const fetchTrees = async () => {
-    const treesOnThisLevel = allTrees.filter((tree) => tree.categories.some((cat) => cat === currentLevel.id));
+    const treesOnThisLevel = allTrees.filter((tree) => tree.categories.some((cat) => cat === currentCategory.id));
     const result = await Promise.all(
-      // TODO: filter out existing trees
-      // TODO where should we get trees from json?
       treesOnThisLevel.map((tree) =>
         fetch(`https://snl.no/${tree.id}.json`, {
           mode: "cors",
@@ -50,15 +58,15 @@ export const Main = () => {
   };
 
   useEffect(() => {
-    if (currentLevel.bottom) {
+    if (currentCategory.bottom) {
       fetchTrees();
     }
-  }, [currentLevel]);
+  }, [currentCategory]);
 
   return (
     <Wrapper>
-      <Header />
-      <Content currentLevel={currentLevel} forest={forest} />
+      <Header breadcrumb={breadcrumb} />
+      <Content currentLevel={currentCategory} forest={forest} />
     </Wrapper>
   );
 };

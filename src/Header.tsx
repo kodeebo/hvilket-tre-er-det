@@ -35,15 +35,12 @@ const Breadcrumbs = styled.div`
   font-size: 20px;
 `;
 
-const Breadcrumb = styled.span``;
-
-const Header = () => {
+const Header = ({ breadcrumb }) => {
   const location = useLocation();
   const paths = location.pathname.split("/").filter((path) => path);
 
   const headers = paths.map((path) => structure[`/${path}`]?.header);
 
-  // TODO: how to show double nested headers when id always are simple?
   return (
     <Wrapper>
       <Link to="/">
@@ -51,7 +48,13 @@ const Header = () => {
       </Link>
       <Text>Norske Trær</Text>
       <Breadcrumbs>
-        {headers.map((header) => header && <Breadcrumb>{`${header} ${String.fromCharCode(0x203a)} `}</Breadcrumb>)}
+        {breadcrumb.map(({ header, id }, i) => (
+          <>
+            <Link key={id} to={(location) => `${location.pathname.split(id)[0]}${id}`}>{`${header}`}</Link>
+            {` ${i + 1 !== breadcrumb.length ? String.fromCharCode(0x203a) : ""} `}
+          </>
+        ))}
+        {location.search && `${String.fromCharCode(0x203a)} ${location.search.replace("?", "")}`}
       </Breadcrumbs>
     </Wrapper>
   );

@@ -36,11 +36,11 @@ const StyledImage = styled.img`
   ${(props) => (props.selected ? "transform: scale(1.06, 1.06);" : "opacity: 0.75;")}
 `;
 
-export const Image = ({ displayName, id, selected, src }) => {
+export const Image = ({ displayName, to, selected, src }) => {
   return (
     <ImageWrapper>
       <ImageHeader>{displayName}</ImageHeader>
-      <Link to={(location) => `${location.pathname.length > 1 ? location.pathname : ""}/${id}`}>
+      <Link to={to}>
         <MovingImage selected={selected} src={src} />
       </Link>
     </ImageWrapper>
