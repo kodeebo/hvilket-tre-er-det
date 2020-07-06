@@ -15,6 +15,7 @@ const Global = createGlobalStyle`
     height: 100%;
     color: ${colors.black};
     font-family: Montserrat;
+    margin: 0;
   }
 `;
 

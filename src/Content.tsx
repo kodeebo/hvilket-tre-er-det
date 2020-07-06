@@ -6,8 +6,8 @@ import ListOfTrees from "./ListOfTrees";
 import Categories from "./Categories";
 import InfoPage from "./InfoPage";
 
-const Wrapper = styledComponentsCjs.div`
-    margin: 5px;
+const Wrapper = styledComponentsCjs.main`
+  margin-bottom: auto;
 `;
 
 const Content = ({ currentLevel, forest }) => {

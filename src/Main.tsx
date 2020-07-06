@@ -6,9 +6,13 @@ import structure from "./structure";
 import allTrees from "./trees.json";
 import Header from "./Header";
 import Content from "./Content";
+import Footer from "./Footer";
 
 const Wrapper = styled.div`
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 export interface Structure {
   header: string;
@@ -67,6 +71,7 @@ export const Main = () => {
     <Wrapper>
       <Header breadcrumb={breadcrumb} />
       <Content currentLevel={currentCategory} forest={forest} />
+      <Footer />
     </Wrapper>
   );
 };

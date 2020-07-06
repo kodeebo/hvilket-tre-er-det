@@ -5,10 +5,11 @@ import structure from "./structure";
 import icon from "../assets/treeIcon128.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   display: flex;
   position: relative;
   align-items: flex-end;
+  margin: 10px;
 `;
 
 const Icon = styled.img`
@@ -50,11 +51,13 @@ const Header = ({ breadcrumb }) => {
       <Breadcrumbs>
         {breadcrumb.map(({ header, id }, i) => (
           <>
-            <Link key={id} to={(location) => `${location.pathname.split(id)[0]}${id}`}>{`${header}`}</Link>
-            {` ${i + 1 !== breadcrumb.length ? String.fromCharCode(0x203a) : ""} `}
+            {` ${String.fromCharCode(0x203a)} `}
+            <Link key={id} to={(location) => `${location.pathname.split(id)[0]}${id}`}>
+              {header}
+            </Link>
           </>
         ))}
-        {location.search && `${String.fromCharCode(0x203a)} ${location.search.replace("?", "")}`}
+        {location.search && ` ${String.fromCharCode(0x203a)} ${location.search.replace("?", "")}`}
       </Breadcrumbs>
     </Wrapper>
   );

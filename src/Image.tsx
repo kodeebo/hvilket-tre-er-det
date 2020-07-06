@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import MovingImage from "./MovingImage";
@@ -14,6 +14,11 @@ const scale = keyframes`
 
 const ImageWrapper = styled.div`
   margin: 20px;
+  opacity: 0;
+  transition: 0.8s;
+
+  ${(props) => props.show && "opacity: 1;"}
+  ${(props) => props.hide && "opacity: 0; transition: 0.2s;"}
 `;
 
 const ImageHeader = styled.div`
@@ -37,8 +42,12 @@ const StyledImage = styled.img`
 `;
 
 export const Image = ({ displayName, to, selected, src }) => {
+  const [show, fadeIn] = useState(false);
+  useEffect(() => {
+    fadeIn(true);
+  }, [to]);
   return (
-    <ImageWrapper>
+    <ImageWrapper show={show}>
       <ImageHeader>{displayName}</ImageHeader>
       <Link to={to}>
         <MovingImage selected={selected} src={src} />
