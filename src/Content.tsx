@@ -10,8 +10,9 @@ const Wrapper = styledComponentsCjs.main`
   margin-bottom: auto;
 `;
 
-const Content = ({ currentLevel, forest }) => {
+const Content = ({ branch, forest }) => {
   const location = useLocation();
+  const currentLevel = branch.slice(-1).pop();
 
   if (location.search) {
     const treeId = location.search.replace("?", "");

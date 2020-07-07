@@ -21,22 +21,21 @@ export interface Structure {
   categories?: Array<{ header: string; id: string }>;
 }
 
-const findCurrenCat = (paths, currentPath, structure, breadcrumb = []) => {
-  if (paths.length === 0) return [structure, breadcrumb];
+const findCurrentBranch = (paths, currentPath, structure, branch = [structure]) => {
+  if (paths.length === 0) return branch;
   const currentCat = structure.categories.find((cat) => cat.id === paths[currentPath]);
-  breadcrumb.push(currentCat);
-  if (paths.length === currentPath + 1) return [currentCat, breadcrumb];
-  return findCurrenCat(paths, currentPath + 1, currentCat, breadcrumb);
+  branch.push(currentCat);
+  if (paths.length === currentPath + 1) return branch;
+  return findCurrentBranch(paths, currentPath + 1, currentCat, branch);
 };
 
 export const Main = () => {
   const location = useLocation();
   const [forest, buildForest] = useState({});
-  console.log(location);
   const paths = location.pathname.split("/").filter((path) => path);
-  console.log(paths);
-  const [currentCategory, breadcrumb] = findCurrenCat(paths, 0, structure);
-  console.log(currentCategory);
+  const branch = findCurrentBranch(paths, 0, structure);
+  const currentCategory = branch.slice(-1).pop();
+  console.log(branch);
   const fetchTrees = async () => {
     const treesOnThisLevel = allTrees.filter((tree) => tree.categories.some((cat) => cat === currentCategory.id));
     const result = await Promise.all(
@@ -69,8 +68,8 @@ export const Main = () => {
 
   return (
     <Wrapper>
-      <Header breadcrumb={breadcrumb} />
-      <Content currentLevel={currentCategory} forest={forest} />
+      <Header breadcrumb={branch.slice(1)} />
+      <Content branch={branch} forest={forest} />
       <Footer />
     </Wrapper>
   );

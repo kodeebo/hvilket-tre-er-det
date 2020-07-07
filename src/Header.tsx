@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import structure from "./structure";
@@ -18,10 +18,7 @@ const Icon = styled.img`
 `;
 
 const Text = styled.div`
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 5px 15px;
   font-size: 40px;
   font-family: Roboto;
   font-weight: bold;
@@ -32,7 +29,8 @@ const Dummy = styled.div`
 `;
 
 const Breadcrumbs = styled.div`
-  margin: 10px;
+  min-height: 30px;
+  margin: 10px 15px 0;
   font-size: 20px;
 `;
 
@@ -47,18 +45,20 @@ const Header = ({ breadcrumb }) => {
       <Link to="/">
         <Icon src={icon} />
       </Link>
-      <Text>Norske Trær</Text>
-      <Breadcrumbs>
-        {breadcrumb.map(({ header, id }, i) => (
-          <>
-            {` ${String.fromCharCode(0x203a)} `}
-            <Link key={id} to={(location) => `${location.pathname.split(id)[0]}${id}`}>
-              {header}
-            </Link>
-          </>
-        ))}
-        {location.search && ` ${String.fromCharCode(0x203a)} ${location.search.replace("?", "")}`}
-      </Breadcrumbs>
+      <div>
+        <Text>Norske Trær</Text>
+        <Breadcrumbs>
+          {breadcrumb.map(({ header, id }) => (
+            <Fragment key={id}>
+              {` ${String.fromCharCode(0x203a)} `}
+              <Link key={id} to={(location) => `${location.pathname.split(id)[0]}${id}`}>
+                {header}
+              </Link>
+            </Fragment>
+          ))}
+          {location.search ? ` ${String.fromCharCode(0x203a)} ${location.search.replace("?", "")}` : " "}
+        </Breadcrumbs>
+      </div>
     </Wrapper>
   );
 };
