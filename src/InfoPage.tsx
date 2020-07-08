@@ -34,32 +34,16 @@ padding: 30px;`;
 
 const InfoPage = ({ tree }) => {
   const location = useLocation();
-  const [ourTree, setTree] = useState(tree);
-  const fetchTree = async () => {
-    const res = await fetch(`https://snl.no/${location.pathname.split("/").pop()}.json`, {
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const json = await res.json();
-    setTree(json);
-  };
-  useEffect(() => {
-    if (!tree) {
-      fetchTree();
-    }
-  }, [tree]);
-  if (!ourTree) return <Spinner />;
+  if (!tree) return <Spinner />;
   return (
     <Wrapper>
-      <Header>{ourTree.title}</Header>
+      <Header>{tree.title}</Header>
       <ImageWrapper>
-        {ourTree.images.map((image) => (
+        {tree.images.map((image) => (
           <StyledImage key={image.id} src={image.standard_size_url || image.full_size_url} />
         ))}
       </ImageWrapper>
-      <Text dangerouslySetInnerHTML={{ __html: ourTree.xhtml_body }} />
+      <Text dangerouslySetInnerHTML={{ __html: tree.xhtml_body }} />
     </Wrapper>
   );
 };

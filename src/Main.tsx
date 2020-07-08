@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 
-import structure from "./structure";
-import allTrees from "./trees.json";
+import structure from "./state/structure";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
+import useForest from "./state/state";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -31,38 +31,15 @@ const findCurrentBranch = (paths, currentPath, structure, branch = [structure]) 
 
 export const Main = () => {
   const location = useLocation();
-  const [forest, buildForest] = useState({});
+  const [forest, fetchTrees] = useForest();
+
   const paths = location.pathname.split("/").filter((path) => path);
   const branch = findCurrentBranch(paths, 0, structure);
   const currentCategory = branch.slice(-1).pop();
-  console.log(branch);
-  const fetchTrees = async () => {
-    const treesOnThisLevel = allTrees.filter((tree) => tree.categories.some((cat) => cat === currentCategory.id));
-    const result = await Promise.all(
-      treesOnThisLevel.map((tree) =>
-        fetch(`https://snl.no/${tree.id}.json`, {
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-      )
-    );
-    const resultJson = await Promise.all(result.map((res) => res.json()));
-    const newTrees = treesOnThisLevel.reduce(
-      (acc, { id, ...rest }, i) => ({ ...acc, [id]: { ...resultJson[i], id, ...rest } }),
-      {}
-    );
-    console.log(newTrees);
-    buildForest({
-      ...forest,
-      ...newTrees,
-    });
-  };
 
   useEffect(() => {
     if (currentCategory.bottom) {
-      fetchTrees();
+      fetchTrees({ id: currentCategory.id });
     }
   }, [currentCategory]);
 

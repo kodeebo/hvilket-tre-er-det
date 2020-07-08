@@ -38,9 +38,9 @@ const MovingImage = (props) => {
 
     var style =
       "rotateX(" +
-      (mousePos.y / image.current.offsetHeight / 2).toFixed(2) +
+      (-mousePos.y / image.current.offsetHeight / 2).toFixed(2) +
       "deg) rotateY(" +
-      (mousePos.x / image.current.offsetWidth / 2).toFixed(2) +
+      (-mousePos.x / image.current.offsetWidth / 2).toFixed(2) +
       "deg)";
     image.current.style.transform = style;
   };

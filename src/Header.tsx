@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import structure from "./structure";
+import structure from "./state/structure";
 import icon from "../assets/treeIcon128.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
