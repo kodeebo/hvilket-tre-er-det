@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 
@@ -29,7 +29,7 @@ const findCurrentBranch = (paths, currentPath, structure, branch = [structure]) 
   return findCurrentBranch(paths, currentPath + 1, currentCat, branch);
 };
 
-export const Main = () => {
+const Main = () => {
   const location = useLocation();
   const [forest, fetchTrees] = useForest();
 

@@ -16,9 +16,25 @@
   "dependencies": {
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
+    "parcel-config-pwa-manifest": "^0.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1"
+  },
+  "pwaManifest": {
+    "name": "Hvilket-tre-er-det",
+    "shortName": "Hvilket tre",
+    "startURL": "./index.html",
+    "theme": "#add8e6",
+    "generateIconOptions": {
+      "baseIcon": "./assets/treeIcon512.png",
+      "sizes": [
+        192,
+        384,
+        512
+      ],
+      "genFavicons": true
+    }
   }
 }
