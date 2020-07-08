@@ -25,7 +25,7 @@
   "pwaManifest": {
     "name": "Hvilket-tre-er-det",
     "shortName": "Hvilket tre",
-    "startURL": "./index.html",
+    "startURL": ".",
     "theme": "#add8e6",
     "generateIconOptions": {
       "baseIcon": "./assets/treeIcon512.png",
