@@ -2,7 +2,7 @@ export default {
   categories: [
     { header: "Barnål", id: "needle", bottom: true },
     {
-      header: "Løvblad",
+      header: "Løvtrær",
       id: "leaf",
       bottom: false,
       categories: [
@@ -11,9 +11,9 @@ export default {
           bottom: false,
           id: "simple",
           categories: [
+            { header: "Jevn bladkant", id: "smooth", bottom: true },
             { header: "Sagtannet bladkant", id: "sawtooth", bottom: true },
             { header: "Fliket bladkant", id: "pointy", bottom: true },
-            { header: "Jevn bladkant", id: "smooth", bottom: true },
           ],
         },
         { header: "Samensatt", id: "multiple", bottom: true },

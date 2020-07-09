@@ -6,10 +6,9 @@ const Wrapper = styledComponentsCjs.div`
 `;
 
 const Image = styledComponentsCjs.img`
-    width: 20em;
-    height: 18em;
-    background-color: white;
-    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+    width: 24em;
+    height: auto;
+    filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.2));
     transition: transform 0.2s;
 `;
 
