@@ -3,15 +3,6 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import MovingImage from "./MovingImage";
 
-const scale = keyframes`
-  0% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(1.06, 1.06);
-  }
-`;
-
 const ImageWrapper = styled.div`
   margin: 20px;
   opacity: 0;
@@ -27,18 +18,11 @@ const ImageHeader = styled.div`
   text-align: center;
 `;
 
-const StyledImage = styled.img`
-  cursor: pointer;
-  width: 350px;
-  height: 260px;
-  box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.25);
-  transition: 0.2s;
-
-  &:hover {
-    transform: scale(1.06, 1.06);
+const StyledLink = styled(Link)`
+  &:focus img,
+  :active img {
+    transform: scale(1.03);
   }
-
-  ${(props) => (props.selected ? "transform: scale(1.06, 1.06);" : "opacity: 0.75;")}
 `;
 
 export const Image = ({ displayName, to, selected, src }) => {
@@ -49,9 +33,9 @@ export const Image = ({ displayName, to, selected, src }) => {
   return (
     <ImageWrapper show={show}>
       <ImageHeader>{displayName}</ImageHeader>
-      <Link to={to} onClick={() => window.scrollTo(0, 0)}>
+      <StyledLink to={to} onClick={() => window.scrollTo(0, 0)}>
         <MovingImage selected={selected} src={src} />
-      </Link>
+      </StyledLink>
     </ImageWrapper>
   );
 };

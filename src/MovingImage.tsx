@@ -12,10 +12,6 @@ const Image = styledComponentsCjs.img`
     max-height: 400px;
     filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.2));
     transition: transform 0.2s;
-
-    &:focus, :active {
-      transform: scale(1.03);
-    }
 `;
 
 const MovingImage = (props) => {

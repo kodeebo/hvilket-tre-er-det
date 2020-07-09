@@ -7,6 +7,7 @@ const Wrapper = styled.footer`
   color: white;
   display: flex;
   justify-content: center;
+  padding: 40px 0;
 `;
 
 const Footer = () => {
