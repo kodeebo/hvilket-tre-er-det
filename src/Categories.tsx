@@ -5,7 +5,7 @@ import { Structure } from "./Main";
 import trees from "./trees.json";
 
 import leaf from "../assets/leaf.png";
-import multiple from "../assets/sammensatt.png";
+import multiple from "../assets/multiple.png";
 import needle from "../assets/needle.png";
 import sawtooth from "../assets/sawtooth.png";
 import smooth from "../assets/simple.png";

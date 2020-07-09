@@ -6,10 +6,16 @@ const Wrapper = styledComponentsCjs.div`
 `;
 
 const Image = styledComponentsCjs.img`
-    width: 24em;
+    width: 100%;
+    max-width: 400px;
     height: auto;
+    max-height: 400px;
     filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.2));
     transition: transform 0.2s;
+
+    &:focus, :active {
+      transform: scale(1.03);
+    }
 `;
 
 const MovingImage = (props) => {
@@ -40,7 +46,7 @@ const MovingImage = (props) => {
       (-mousePos.y / image.current.offsetHeight / 2).toFixed(2) +
       "deg) rotateY(" +
       (-mousePos.x / image.current.offsetWidth / 2).toFixed(2) +
-      "deg)";
+      "deg) scale(1.03)";
     image.current.style.transform = style;
   };
 
