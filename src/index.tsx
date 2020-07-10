@@ -9,7 +9,7 @@ import { Route } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={"/"}>
       <GlobalStyle />
       <Route path="/" component={Main} />
     </BrowserRouter>
