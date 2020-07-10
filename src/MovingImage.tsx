@@ -11,19 +11,25 @@ const Image = styledComponentsCjs.img`
     height: auto;
     max-height: 400px;
     filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.2));
-    transition: transform 0.2s;
+    transition: transform 0.15s;
 `;
+
+let counter = 0;
+let refreshRate = 3;
+
+const isTimeToUpdate = () => {
+  return counter++ % refreshRate === 0;
+};
 
 const MovingImage = (props) => {
   const wrapper = useRef(null);
   const image = useRef(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [mouseOrigin, setMouseOrigin] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     setMouseOrigin({
       x: wrapper.current.offsetLeft + Math.floor(wrapper.current.offsetWidth / 2),
-      y: wrapper.current.offsetTop + Math.floor(wrapper.current.offsetHeight / 2),
+      y: wrapper.current.getBoundingClientRect().top + Math.floor(wrapper.current.offsetHeight / 2),
     });
   }, []);
 
@@ -31,25 +37,33 @@ const MovingImage = (props) => {
     image.current.style = "";
   };
 
-  const onMouseMoveHandler = (e) => {
-    setMousePos({
-      x: e.clientX - mouseOrigin.x,
-      y: (e.clientY - mouseOrigin.y) * -1,
+  const onMouseMoveEnter = (e) => {
+    setMouseOrigin({
+      x: wrapper.current.offsetLeft + Math.floor(wrapper.current.offsetWidth / 2),
+      y: wrapper.current.getBoundingClientRect().top + Math.floor(wrapper.current.offsetHeight / 2),
     });
+    onMouseMoveHandler(e);
+  };
+
+  const onMouseMoveHandler = (e) => {
+    if (!isTimeToUpdate()) return;
+
+    const mouseX = e.clientX - mouseOrigin.x;
+    const mouseY = (e.clientY - mouseOrigin.y) * -1;
 
     var style =
       "rotateX(" +
-      (-mousePos.y / image.current.offsetHeight / 2).toFixed(2) +
+      (-mouseY / image.current.offsetHeight / 2).toFixed(2) +
       "deg) rotateY(" +
-      (-mousePos.x / image.current.offsetWidth / 2).toFixed(2) +
-      "deg) scale(1.03)";
+      (-mouseX / image.current.offsetWidth / 2).toFixed(2) +
+      "deg) scale(1.04)";
     image.current.style.transform = style;
   };
 
   return (
     <Wrapper
       ref={wrapper}
-      onMouseEnter={onMouseMoveHandler}
+      onMouseEnter={onMouseMoveEnter}
       onMouseLeave={onMouseLeaveHandler}
       onMouseMove={onMouseMoveHandler}
     >
