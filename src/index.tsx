@@ -12,6 +12,7 @@ const App = () => {
     <BrowserRouter basename={"/"}>
       <GlobalStyle />
       <Route path="/" component={Main} />
+      <Route path="*" component={Main} />
     </BrowserRouter>
   );
 };
