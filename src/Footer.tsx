@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
 `;
 
 const Footer = () => {
-  return <Wrapper>Made by: Torgeir Haugen</Wrapper>;
+  return <Wrapper>TH</Wrapper>;
 };
 
 export default Footer;

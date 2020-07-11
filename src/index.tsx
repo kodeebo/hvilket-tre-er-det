@@ -5,14 +5,12 @@ import { BrowserRouter } from "react-router-dom";
 
 import { GlobalStyle } from "./GlobalStyle";
 import Main from "./Main";
-import { Route } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
   return (
-    <BrowserRouter basename={"/"}>
+    <BrowserRouter>
       <GlobalStyle />
-      <Route path="/" component={Main} />
-      <Route path="*" component={Main} />
+      <Main />
     </BrowserRouter>
   );
 };
