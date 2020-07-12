@@ -10,6 +10,11 @@ const ImageWrapper = styled.div`
 
   ${(props) => props.show && "opacity: 1;"}
   ${(props) => props.hide && "opacity: 0; transition: 0.2s;"}
+
+  @media (max-width: 600px) {
+    max-width: 45%;
+    margin: 20px 5px;
+  }
 `;
 
 const ImageHeader = styled.div`

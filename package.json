@@ -26,7 +26,7 @@
     "name": "Hvilket-tre-er-det",
     "shortName": "Hvilket tre",
     "startURL": ".",
-    "theme": "#add8e6",
+    "theme": "black",
     "generateIconOptions": {
       "baseIcon": "./assets/treeIcon512.png",
       "sizes": [

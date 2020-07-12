@@ -20,18 +20,21 @@ const Icon = styled.img`
 const Text = styled.div`
   margin: 5px 15px;
   font-size: 40px;
+  @media (max-width: 600px) {
+    font-size: 32px;
+  }
   font-family: Roboto;
   font-weight: bold;
-`;
-
-const Dummy = styled.div`
-  width: 128px;
 `;
 
 const Breadcrumbs = styled.div`
   min-height: 30px;
   margin: 10px 15px 0;
   font-size: 20px;
+
+  & > a {
+    white-space: nowrap;
+  }
 `;
 
 const Header = ({ breadcrumb }) => {
