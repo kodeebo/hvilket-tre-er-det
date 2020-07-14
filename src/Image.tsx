@@ -39,7 +39,7 @@ export const Image = ({ displayName, to, selected, src }) => {
     <ImageWrapper show={show}>
       <ImageHeader>{displayName}</ImageHeader>
       <StyledLink to={to} onClick={() => window.scrollTo(0, 0)}>
-        <MovingImage selected={selected} src={src} />
+        <MovingImage selected={selected} src={src} alt={displayName} />
       </StyledLink>
     </ImageWrapper>
   );
