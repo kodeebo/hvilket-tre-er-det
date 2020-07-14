@@ -3,7 +3,7 @@ import allTrees from "../trees.json";
 
 const useForest = () => {
   const [forest, buildForest] = useState({});
-  const fetchTrees = async ({ id }) => {
+  const fetchTrees = async ({ id }: { id: string }) => {
     const treesOnThisLevel = allTrees.filter((tree) => tree.categories.some((cat) => cat === id));
     const result = await Promise.all(
       treesOnThisLevel.map((tree) =>

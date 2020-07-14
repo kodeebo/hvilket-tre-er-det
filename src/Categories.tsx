@@ -4,13 +4,13 @@ import styled from "styled-components";
 import { Structure } from "./Main";
 import trees from "./trees.json";
 
-import leaf from "../assets/leaf.png";
-import multiple from "../assets/multiple.png";
-import needle from "../assets/needle.png";
-import sawtooth from "../assets/sawtooth.png";
-import smooth from "../assets/simple.png";
-import simple from "../assets/simple.png";
-import pointy from "../assets/pointy.png";
+import leaf from "../assets/leaf.webp";
+import multiple from "../assets/multiple.webp";
+import needle from "../assets/needle.webp";
+import sawtooth from "../assets/sawtooth.webp";
+import smooth from "../assets/simple.webp";
+import simple from "../assets/simple.webp";
+import pointy from "../assets/pointy.webp";
 
 const images = { leaf, multiple, simple, needle, sawtooth, smooth, pointy };
 

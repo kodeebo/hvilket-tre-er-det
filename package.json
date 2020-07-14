@@ -10,6 +10,7 @@
     "postbuild": "workbox generateSW workbox-config.js"
   },
   "devDependencies": {
+    "@parcel/validator-typescript": "^2.0.0-alpha.3",
     "parcel": "^2.0.0-beta.1",
     "workbox-cli": "^5.1.3"
   },
