@@ -14,6 +14,17 @@ const Image = styledComponentsCjs.img`
     transition: transform 0.15s;
 `;
 
+const Placeholder = styledComponentsCjs(Image)`
+  border: 1px solid black;
+  height: 400px;
+  width: 400px;
+
+  @media (max-width: 600px) {
+    height: 200px;
+    width: 200px;
+  }
+`;
+
 let counter = 0;
 let refreshRate = 3;
 
@@ -25,6 +36,7 @@ const MovingImage = (props) => {
   const wrapper = useRef(null);
   const image = useRef(null);
   const [mouseOrigin, setMouseOrigin] = useState({ x: 0, y: 0 });
+  const [showPlaceholder, setPlaceholder] = useState(true);
 
   useEffect(() => {
     setMouseOrigin({
@@ -67,7 +79,8 @@ const MovingImage = (props) => {
       onMouseLeave={onMouseLeaveHandler}
       onMouseMove={onMouseMoveHandler}
     >
-      <Image ref={image} {...props} />
+      {showPlaceholder && <Placeholder />}
+      <Image ref={image} {...props} onLoad={() => setPlaceholder(false)} />
     </Wrapper>
   );
 };
