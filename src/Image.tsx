@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 import MovingImage from "./MovingImage";
 
@@ -8,8 +8,7 @@ const ImageWrapper = styled.div`
   opacity: 0;
   transition: 0.8s;
 
-  ${(props) => props.show && "opacity: 1;"}
-  ${(props) => props.hide && "opacity: 0; transition: 0.2s;"}
+  ${(props: { show: boolean }) => props.show && "opacity: 1;"}
 
   @media (max-width: 600px) {
     max-width: 45%;
@@ -29,6 +28,13 @@ const StyledLink = styled(Link)`
     transform: scale(1.03);
   }
 `;
+
+interface Props {
+  displayName: string;
+  to: string;
+  selected?: boolean;
+  src: string;
+}
 
 export const Image = ({ displayName, to, selected, src }) => {
   const [show, fadeIn] = useState(false);

@@ -1,12 +1,18 @@
 import react, { useState } from "react";
 import allTrees from "../trees.json";
 
+interface Tree {
+  name: string;
+  id: string;
+  categories: Array<string>;
+}
+
 const useForest = () => {
   const [forest, buildForest] = useState({});
-  const fetchTrees = async ({ id }: { id: string }) => {
-    const treesOnThisLevel = allTrees.filter((tree) => tree.categories.some((cat) => cat === id));
+  const fetchTrees = async ({ id }: { id: string }): Promise<void> => {
+    const treesOnThisLevel = allTrees.filter((tree: Tree) => tree.categories.some((cat) => cat === id));
     const result = await Promise.all(
-      treesOnThisLevel.map((tree) =>
+      treesOnThisLevel.map((tree: Tree) =>
         fetch(`https://snl.no/${tree.id}.json`, {
           mode: "cors",
           headers: {

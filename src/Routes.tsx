@@ -3,9 +3,12 @@ import { Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { state } from "./structure";
 
-export const Routes = ({ children }) => {
+type Props = {
+  children: React.ReactChildren;
+};
+
+export const Routes = ({ children }: Props) => {
   const location = useLocation();
-  console.log(location);
   return (
     <Switch>
       {Object.keys(state).map((page) => (

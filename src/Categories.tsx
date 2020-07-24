@@ -2,7 +2,6 @@ import React from "react";
 import { Image } from "./Image";
 import styled from "styled-components";
 import { Structure } from "./Main";
-import trees from "./trees.json";
 
 import leaf from "../assets/leaf.webp";
 import multiple from "../assets/multiple.webp";
@@ -35,7 +34,7 @@ const Categories = ({ currentLevel, selectedImage }: Props) => {
       {currentLevel.categories.map(({ header, id }) => (
         <Image
           key={id}
-          to={(location) => `${location.pathname.length > 1 ? location.pathname : ""}/${id}`}
+          to={(location: Location) => `${location.pathname.length > 1 ? location.pathname : ""}/${id}`}
           displayName={header}
           selected={selectedImage === header}
           src={images[id]}

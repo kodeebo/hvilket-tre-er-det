@@ -32,33 +32,42 @@ const isTimeToUpdate = () => {
   return counter++ % refreshRate === 0;
 };
 
-const MovingImage = (props) => {
-  const wrapper = useRef(null);
-  const image = useRef(null);
+type Props = {
+  src: string;
+};
+
+const MovingImage = (props: Props) => {
+  const wrapper = useRef<HTMLDivElement>(null);
+  const image = useRef<HTMLImageElement>(null);
   const [mouseOrigin, setMouseOrigin] = useState({ x: 0, y: 0 });
   const [showPlaceholder, setPlaceholder] = useState(true);
 
   useEffect(() => {
-    setMouseOrigin({
-      x: wrapper.current.offsetLeft + Math.floor(wrapper.current.offsetWidth / 2),
-      y: wrapper.current.getBoundingClientRect().top + Math.floor(wrapper.current.offsetHeight / 2),
-    });
+    setOrigin();
   }, []);
 
-  const onMouseLeaveHandler = () => {
-    image.current.style = "";
+  const setOrigin = () => {
+    if (wrapper.current) {
+      setMouseOrigin({
+        x: wrapper.current.offsetLeft + Math.floor(wrapper.current.offsetWidth / 2),
+        y: wrapper.current.getBoundingClientRect().top + Math.floor(wrapper.current.offsetHeight / 2),
+      });
+    }
   };
 
-  const onMouseMoveEnter = (e) => {
-    setMouseOrigin({
-      x: wrapper.current.offsetLeft + Math.floor(wrapper.current.offsetWidth / 2),
-      y: wrapper.current.getBoundingClientRect().top + Math.floor(wrapper.current.offsetHeight / 2),
-    });
+  const onMouseLeaveHandler = () => {
+    if (image.current) {
+      image.current.style = "";
+    }
+  };
+
+  const onMouseMoveEnter = (e: MouseEvent) => {
+    setOrigin();
     onMouseMoveHandler(e);
   };
 
-  const onMouseMoveHandler = (e) => {
-    if (!isTimeToUpdate()) return;
+  const onMouseMoveHandler = (e: MouseEvent) => {
+    if (!isTimeToUpdate() || !image.current) return;
 
     const mouseX = e.clientX - mouseOrigin.x;
     const mouseY = (e.clientY - mouseOrigin.y) * -1;
