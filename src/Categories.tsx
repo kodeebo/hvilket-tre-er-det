@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Image } from "./Image";
 import styled from "styled-components";
 import { Structure } from "./Main";
 
-import leaf from "../assets/leaf.webp";
-import multiple from "../assets/multiple.webp";
-import needle from "../assets/needle.webp";
-import sawtooth from "../assets/sawtooth.webp";
-import smooth from "../assets/simple.webp";
-import simple from "../assets/simple.webp";
-import pointy from "../assets/pointy.webp";
+import leaf from "url:../assets/leaf.webp";
+import multiple from "url:../assets/multiple.webp";
+import needle from "url:../assets/needle.webp";
+import sawtooth from "url:../assets/sawtooth.webp";
+import smooth from "url:../assets/simple.webp";
+import simple from "url:../assets/simple.webp";
+import pointy from "url:../assets/pointy.webp";
 
 const images = { leaf, multiple, simple, needle, sawtooth, smooth, pointy };
 

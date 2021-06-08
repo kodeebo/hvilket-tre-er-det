@@ -7,12 +7,12 @@ const ImageWrapper = styled.div`
   margin: 20px;
   opacity: 0;
   transition: 0.8s;
+  width: 400px;
 
   ${(props: { show: boolean }) => props.show && "opacity: 1;"}
 
   @media (max-width: 600px) {
     max-width: 45%;
-    margin: 20px 5px;
   }
 `;
 
@@ -38,14 +38,12 @@ interface Props {
 
 export const Image = ({ displayName, to, selected, src }) => {
   const [show, fadeIn] = useState(false);
-  useEffect(() => {
-    fadeIn(true);
-  }, [to]);
+
   return (
     <ImageWrapper show={show}>
       <ImageHeader>{displayName}</ImageHeader>
       <StyledLink to={to} onClick={() => window.scrollTo(0, 0)}>
-        <MovingImage selected={selected} src={src} alt={displayName} />
+        <MovingImage selected={selected} onLoad={() => fadeIn(true)} src={src} alt={displayName} />
       </StyledLink>
     </ImageWrapper>
   );

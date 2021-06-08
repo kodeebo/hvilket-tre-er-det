@@ -15,9 +15,8 @@ const ImageWrapper = styledComponentsCjs.div`
 
 const StyledImage = styledComponentsCjs.img`
   width: 360px;
-  min-width: 360px;
   height: 260px;
-  margin: 5px;
+  margin: 10px;
 `;
 
 const Text = styledComponentsCjs.div`

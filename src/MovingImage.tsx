@@ -5,7 +5,7 @@ const Wrapper = styledComponentsCjs.div`
     perspective: 13px;
 `;
 
-const Image = styledComponentsCjs.img`
+const StyledImage = styledComponentsCjs.img`
     max-width: 400px;
     height: auto;
     max-height: 400px;
@@ -80,7 +80,7 @@ const MovingImage = (props: Props) => {
       onMouseLeave={onMouseLeaveHandler}
       onMouseMove={onMouseMoveHandler}
     >
-      <Image ref={image} width={400} height={264} {...props} />
+      <StyledImage ref={image} onLoad={props.onLoad} {...props} />
     </Wrapper>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Image } from "./Image";
 import styled from "styled-components";
 import { Structure } from "./Main";
@@ -20,9 +20,16 @@ const getRandomImage = (images) => images.length && images[Math.floor(images.len
 const getImage = (images, preferred_image) => (preferred_image ? images[preferred_image] : getRandomImage(images));
 
 const ListOfTrees = ({ currentLevel, forest, selectedImage }: Props) => {
+  console.log({ forest });
   if (!forest) {
     return <div>"No trees found"</div>;
   }
+
+  useEffect(() => {
+    return () => {
+      console.log("unmounting categories");
+    };
+  }, []);
 
   const trees = Object.keys(forest)
     .filter((tree) => forest[tree].categories.some((cat) => cat === currentLevel.id))
