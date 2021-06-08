@@ -6,22 +6,15 @@ const Wrapper = styledComponentsCjs.div`
 `;
 
 const Image = styledComponentsCjs.img`
-    width: 100%;
     max-width: 400px;
     height: auto;
     max-height: 400px;
     filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.2));
     transition: transform 0.15s;
-`;
 
-const Placeholder = styledComponentsCjs(Image)`
-  border: 1px solid black;
-  height: 400px;
-  width: 400px;
-
-  @media (max-width: 600px) {
-    height: 200px;
-    width: 200px;
+    @media (max-width: 600px) {
+      height: 200px;
+      width: 200px;
   }
 `;
 
@@ -40,7 +33,6 @@ const MovingImage = (props: Props) => {
   const wrapper = useRef<HTMLDivElement>(null);
   const image = useRef<HTMLImageElement>(null);
   const [mouseOrigin, setMouseOrigin] = useState({ x: 0, y: 0 });
-  const [showPlaceholder, setPlaceholder] = useState(true);
 
   useEffect(() => {
     setOrigin();
@@ -88,8 +80,7 @@ const MovingImage = (props: Props) => {
       onMouseLeave={onMouseLeaveHandler}
       onMouseMove={onMouseMoveHandler}
     >
-      {showPlaceholder && <Placeholder />}
-      <Image ref={image} {...props} onLoad={() => setPlaceholder(false)} />
+      <Image ref={image} width={400} height={264} {...props} />
     </Wrapper>
   );
 };
